@@ -357,12 +357,22 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   :root { --shell: min(100% - 28px, 1240px); --header-height: 74px; }
   .brand img { width: 52px; height: 52px; }
   .brand strong { font-size: 1.15rem; }
+  .brand small { letter-spacing: .16em; }
   .mobile-menu { top: 100%; min-height: calc(100dvh - var(--header-height)); padding-bottom: env(safe-area-inset-bottom); }
+  .mobile-menu nav { margin: 20px auto; }
+  .mobile-menu a {
+    min-height: 58px;
+    padding: 16px 2px;
+    font-size: clamp(1.65rem, 6.6vw, 2.9rem);
+    line-height: .92;
+  }
   .hero { min-height: calc(100svh - var(--header-height)); height: auto; }
   .hero-media { background: radial-gradient(circle at 82% 22%, rgba(24,56,133,.78), transparent 38%), radial-gradient(circle at 20% 65%, rgba(218,37,30,.2), transparent 32%), linear-gradient(145deg, #0c2145, #07162f 68%); }
   .hero-media img { display: block; object-position: 62% center; }
   .hero-grid { grid-template-columns: 1fr; gap: 26px; padding-block: 58px 24px; }
-  .hero-copy > p { display: block; max-width: 34rem; color: rgba(255,255,255,.8); font-size: .96rem; }
+  .hero-copy { max-width: 30rem; }
+  .hero h1 { max-width: 11ch; margin-bottom: 18px; line-height: .9; }
+  .hero-copy > p { display: block; max-width: 32rem; color: rgba(255,255,255,.84); font-size: 1rem; line-height: 1.55; text-wrap: pretty; }
   .hero-actions { margin-top: 25px; }
   .hero-ticket { width: 100%; max-width: none; }
   .ticket-top { padding: 12px 15px; }
@@ -373,6 +383,8 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .hero-media::after { background: linear-gradient(0deg, rgba(7,22,47,.99) 0%, rgba(7,22,47,.82) 58%, rgba(7,22,47,.38)); }
   .hero-stripe { display: none; }
   .section-heading { display: block; }
+  .section-heading h2 { max-width: 12ch; line-height: .94; }
+  .section-heading p { max-width: 34rem; line-height: 1.6; text-wrap: pretty; }
   .section-heading .text-link { margin-top: 24px; }
   .match-grid, .schedule-list, .results-grid { grid-template-columns: 1fr; }
   .match-grid .match-card:last-child { display: flex; }
@@ -413,6 +425,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .sponsor-card { gap: 38px; }
   .sponsor-caption { text-align: left; }
   .sponsor-caption .eyebrow { justify-content: flex-start; }
+  .sponsor-caption p, .community-copy p, .rastane-content p, .story-copy p { line-height: 1.65; text-wrap: pretty; }
   .schedule-controls { top: calc(var(--header-height) + 8px); display: grid; margin-top: -10px; padding: 12px; }
   .filter-bar { flex-wrap: nowrap; max-width: 100%; overflow-x: auto; padding-bottom: 4px; }
   .filter-bar button { flex: 0 0 auto; min-height: 44px; }
@@ -430,13 +443,26 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
 }
 
 @media (max-width: 460px) {
-  h1 { font-size: 3.6rem; }
+  h1 { font-size: clamp(3rem, 13vw, 3.6rem); }
+  h2 { font-size: clamp(2.2rem, 10vw, 3rem); }
+  .brand { gap: 10px; }
+  .brand img { width: 46px; height: 46px; }
+  .brand strong { font-size: 1rem; }
+  .brand small { font-size: .58rem; letter-spacing: .13em; }
+  .mobile-menu nav { margin: 16px auto; }
+  .mobile-menu a { min-height: 52px; font-size: 1.5rem; }
   .hero-actions { display: grid; }
   .hero-actions .button { width: 100%; }
+  .hero h1 { max-width: 9ch; }
+  .hero-copy > p { font-size: .98rem; }
+  .ticket-top { font-size: .64rem; }
+  .ticket-body { grid-template-columns: 1fr; gap: 10px; }
+  .ticket-location { font-size: .72rem; }
   .match-card { padding: 18px; }
   .match-teams { grid-template-columns: 1fr 58px 1fr; }
   .match-teams strong { font-size: 1.2rem; }
   .ticket-teams { font-size: 1.2rem; }
+  .section { padding-block: 64px; }
   .gallery-grid { display: block; }
   .gallery-item { width: 100%; min-height: 300px; margin-bottom: 10px; }
   .footer-grid { grid-template-columns: 1fr; }
