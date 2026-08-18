@@ -4,7 +4,13 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { site } from "@/lib/data";
 
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mnk-tinasport.hr";
+const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
+const vercelUrl = process.env.VERCEL_URL?.trim();
+const siteUrl = configuredSiteUrl
+  ? configuredSiteUrl
+  : vercelUrl
+    ? `https://${vercelUrl}`
+    : "https://mnk-tinasport.hr";
 const isPreviewDeployment = process.env.VERCEL_ENV === "preview";
 
 export const metadata: Metadata = {
