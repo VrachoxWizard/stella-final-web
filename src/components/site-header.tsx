@@ -66,6 +66,11 @@ export function SiteHeader() {
       </header>
       {mobileOpen && <div className="mobile-menu" id="mobile-menu">
         <nav className="shell" aria-label="Mobilna navigacija">
+          <div className="mobile-menu-header">
+            <button className="menu-toggle mobile-menu-close" type="button" aria-label="Zatvori izbornik" onClick={() => setMobileOpen(false)}>
+              <X aria-hidden="true" />
+            </button>
+          </div>
           {links.map((link, index) => <Link key={link.href} style={{ "--i": index } as React.CSSProperties} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href} onClick={() => setMobileOpen(false)}>{link.label}<span aria-hidden="true">↗</span></Link>)}
           <div className="mobile-age-group"><span>Uzrasti</span><div>{ageYears.map((year) => <Link key={year} aria-current={pathname === `/uzrasti/${year}` ? "page" : undefined} className={pathname === `/uzrasti/${year}` ? "active" : ""} href={`/uzrasti/${year}`} onClick={() => setMobileOpen(false)}>U{year}</Link>)}</div></div>
         </nav>

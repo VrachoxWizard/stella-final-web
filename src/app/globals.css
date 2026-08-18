@@ -520,6 +520,8 @@ body.menu-open .mobile-menu {
 .age-submenu a { display: flex; min-height: 44px; align-items: center; padding: 0 13px; color: rgba(255,255,255,.68); font-size: .76rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
 .age-submenu a:hover, .age-submenu a.active { color: var(--white); background: var(--red); }
 .mobile-age-group { padding: 20px 0 40px; }
+.mobile-menu-header { display: flex; justify-content: flex-end; margin-bottom: 14px; }
+.mobile-menu-close { display: grid !important; flex: 0 0 46px; margin-left: auto; }
 .mobile-age-group > span { color: rgba(255,255,255,.45); font-size: .68rem; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; }
 .mobile-age-group > div { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1px; margin-top: 13px; background: rgba(255,255,255,.12); }
 .mobile-age-group a { display: grid !important; min-height: 54px; place-items: center; padding: 0 !important; border: 0 !important; background: var(--navy-2); font-family: var(--body) !important; font-size: .75rem !important; opacity: 1 !important; transform: none !important; }
