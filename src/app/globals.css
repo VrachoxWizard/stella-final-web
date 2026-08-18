@@ -336,10 +336,12 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .desktop-nav, .header-cta { display: none; }
   .mobile-nav { display: block; }
   .menu-toggle { display: grid; }
-  .mobile-menu { position: fixed; inset: var(--header-height) 0 0; display: block; color: var(--white); background: var(--navy); opacity: 0; visibility: hidden; transform: translateY(-10px); transition: 180ms ease; padding-bottom: env(safe-area-inset-bottom); }
+  /* `site-header.tsx` conditionally renders `.mobile-menu` when `mobileOpen=true`.
+     Keep it visible by default (no `.mobile-nav[open]` dependency), so the toggle works. */
+  .mobile-menu { position: fixed; inset: var(--header-height) 0 0; display: block; color: var(--white); background: var(--navy); opacity: 1; visibility: visible; transform: none; transition: 180ms ease; padding-bottom: env(safe-area-inset-bottom); }
   .mobile-nav[open] .mobile-menu { opacity: 1; visibility: visible; transform: none; }
   .mobile-menu nav { width: var(--shell); margin: 30px auto; }
-  .mobile-menu a { display: flex; align-items: center; justify-content: space-between; padding: 19px 2px; border-bottom: 1px solid rgba(255,255,255,.12); font-family: var(--display); font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1; text-transform: uppercase; opacity: 0; transform: translateX(-12px); }
+  .mobile-menu a { display: flex; align-items: center; justify-content: space-between; padding: 19px 2px; border-bottom: 1px solid rgba(255,255,255,.12); font-family: var(--display); font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1; text-transform: uppercase; opacity: 1; transform: none; }
   .mobile-nav[open] .mobile-menu a { animation: menu-in 220ms ease forwards; animation-delay: calc(var(--i) * 40ms); }
   .mobile-menu a.active { color: var(--red); }
   @keyframes menu-in { to { opacity: 1; transform: none; } }
