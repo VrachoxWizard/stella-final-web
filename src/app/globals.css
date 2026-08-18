@@ -354,6 +354,8 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
 }
 
 @media (max-width: 760px) {
+  html, body { width: 100%; overflow-x: clip; }
+  main, section, .shell, .hero-grid, .rastane-story, .community-feature, .sponsor-card, .gallery-preview, .site-footer { max-width: 100%; }
   :root { --shell: min(100% - 28px, 1240px); --header-height: 74px; }
   .brand img { width: 52px; height: 52px; }
   .brand strong { font-size: 1.15rem; }
@@ -375,6 +377,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .hero-copy > p { display: block; max-width: 32rem; color: rgba(255,255,255,.84); font-size: 1rem; line-height: 1.55; text-wrap: pretty; }
   .hero-actions { margin-top: 25px; }
   .hero-ticket { width: 100%; max-width: none; }
+  .hero-ticket::before, .hero-ticket::after { display: none; }
   .ticket-top { padding: 12px 15px; }
   .ticket-body { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 8px 16px; padding: 14px 15px; }
   .ticket-date, .ticket-location { grid-column: 1 / -1; }
@@ -393,7 +396,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .editorial-copy { order: -1; }
   .editorial-image { min-height: 420px; }
   .film-grid { grid-template-columns: 1fr; gap: 52px; }
-  .film-frame { width: min(100% - 18px, 410px); justify-self: center; box-shadow: 18px 18px 0 var(--red), 0 24px 60px rgba(0,0,0,.38); }
+  .film-frame { width: min(100%, 410px); justify-self: center; box-shadow: 14px 14px 0 var(--red), 0 24px 60px rgba(0,0,0,.38); }
   .film-play { width: 118px; height: 118px; }
   .sponsor-panel { grid-template-columns: 1fr; gap: 42px; }
   .sponsor-mark { min-height: 210px; }
@@ -455,6 +458,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .hero-actions .button { width: 100%; }
   .hero h1 { max-width: 9ch; }
   .hero-copy > p { font-size: .98rem; }
+  .hero-grid { gap: 20px; padding-block-end: 18px; }
   .ticket-top { font-size: .64rem; }
   .ticket-body { grid-template-columns: 1fr; gap: 10px; }
   .ticket-location { font-size: .72rem; }
