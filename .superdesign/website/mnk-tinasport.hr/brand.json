@@ -1,0 +1,373 @@
+{
+  "meta": {
+    "url": "https://mnk-tinasport.hr/",
+    "title": "TINA ŠPORT |",
+    "description": "",
+    "language": "en-US",
+    "viewport": "width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0",
+    "themeColor": null,
+    "ogImage": null,
+    "ogTitle": "TINA ŠPORT |",
+    "ogDescription": ""
+  },
+  "theme": {
+    "mode": "light",
+    "bodyBackground": "#ffffff",
+    "isDark": false,
+    "confidence": 0.9
+  },
+  "brand": {
+    "name": "TINA ŠPORT",
+    "favicon": {
+      "href": "https://mnk-tinasport.hr/wp-content/uploads/2022/01/Tina-logo-cisti-150x150.png",
+      "type": null
+    }
+  },
+  "colors": {
+    "dominant": [
+      {
+        "hex": "#183885",
+        "ratio": 0.483
+      },
+      {
+        "hex": "#000000",
+        "ratio": 0.299
+      },
+      {
+        "hex": "#ffffff",
+        "ratio": 0.131
+      },
+      {
+        "hex": "#0c71c3",
+        "ratio": 0.035
+      },
+      {
+        "hex": "#147a19",
+        "ratio": 0.029
+      },
+      {
+        "hex": "#333333",
+        "ratio": 0.008
+      },
+      {
+        "hex": "#111111",
+        "ratio": 0.004
+      },
+      {
+        "hex": "#da251e",
+        "ratio": 0.003
+      },
+      {
+        "hex": "#2ea3f2",
+        "ratio": 0.003
+      },
+      {
+        "hex": "#eeeeee",
+        "ratio": 0.002
+      },
+      {
+        "hex": "#222222",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#0073aa",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#323232",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#2b87da",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#3b5998",
+        "ratio": 0.001
+      },
+      {
+        "hex": "#ea2c59",
+        "ratio": 0.001
+      }
+    ],
+    "palette": [
+      {
+        "hex": "#ffffff",
+        "role": "background",
+        "source": "computed"
+      },
+      {
+        "hex": "#183885",
+        "role": "foreground",
+        "source": "computed"
+      },
+      {
+        "hex": "#0073aa",
+        "role": "primary",
+        "source": "heuristic"
+      },
+      {
+        "hex": "#0c71c3",
+        "role": "secondary",
+        "source": "heuristic"
+      },
+      {
+        "hex": "#2ea3f2",
+        "role": "accent",
+        "source": "heuristic"
+      }
+    ],
+    "cssVariables": {
+      "--wp--preset--gradient--midnight": "#020381",
+      "--wp--preset--color--vivid-cyan-blue": "#0693e3",
+      "--wp--preset--shadow--outlined": "#ffffff",
+      "--wp--preset--shadow--natural": "#000000",
+      "--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan": "#7adcb4",
+      "--wp--preset--gradient--blush-light-purple": "#ffceec",
+      "--wp--preset--color--vivid-purple": "#9b51e0",
+      "--wp--preset--color--pale-cyan-blue": "#8ed1fc",
+      "--wp--preset--color--pale-pink": "#f78da7",
+      "--wp--preset--color--cyan-bluish-gray": "#abb8c3",
+      "--wp--preset--gradient--luminous-dusk": "#ffcb70",
+      "--wp--preset--color--luminous-vivid-amber": "#fcb900",
+      "--wp--preset--gradient--electric-grass": "#caf880",
+      "--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange": "#fcb900",
+      "--wp--preset--gradient--blush-bordeaux": "#fecda5",
+      "--wp--preset--color--vivid-red": "#cf2e2e",
+      "--wp--preset--shadow--crisp": "#000000",
+      "--wp--preset--color--vivid-green-cyan": "#00d084",
+      "--wp--preset--shadow--deep": "#000000",
+      "--wp--preset--color--light-green-cyan": "#7bdcb5",
+      "--wp--preset--shadow--sharp": "#000000",
+      "--wp--preset--gradient--pale-ocean": "#fff5cb",
+      "--wp--preset--color--white": "#ffffff",
+      "--wp--preset--color--black": "#000000",
+      "--wp--preset--color--luminous-vivid-orange": "#ff6900",
+      "--wp--preset--gradient--luminous-vivid-orange-to-vivid-red": "#ff6900",
+      "--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple": "#0693e3",
+      "--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray": "#eeeeee",
+      "--wp--preset--gradient--cool-to-warm-spectrum": "#4aeadc"
+    },
+    "gradients": [
+      {
+        "css": "linear-gradient(-45deg, rgba(255, 255, 255, 0.4) 25%, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0) 50%, rgba(255, 255, 255, 0.4) 0px, rgba(255, 255, 255, 0.4) 75%, rgba(0, 0, 0, 0) 0px, rgba(0, 0, 0, 0))",
+        "sampleColors": [
+          "#ffffff",
+          "#000000"
+        ]
+      },
+      {
+        "css": "linear-gradient(rgb(43, 135, 218) 0%, rgba(0, 0, 0, 0.4) 0%)",
+        "sampleColors": [
+          "#2b87da",
+          "#000000"
+        ]
+      }
+    ]
+  },
+  "logo": {
+    "candidates": [
+      {
+        "selector": "img#logo",
+        "href": "https://mnk-tinasport.hr/wp-content/uploads/2022/01/Tina-logo-cisti.png",
+        "type": "png",
+        "width": 220,
+        "height": 213,
+        "svgContent": null,
+        "colors": [],
+        "isLight": false,
+        "isDark": false,
+        "needsDarkBackground": false,
+        "needsLightBackground": false,
+        "_score": 115,
+        "uploadedUrl": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d87b1be5-11e3-48b6-bf9d-a561180ddaad.png"
+      }
+    ],
+    "best": {
+      "selector": "img#logo",
+      "href": "https://mnk-tinasport.hr/wp-content/uploads/2022/01/Tina-logo-cisti.png",
+      "type": "png",
+      "width": 220,
+      "height": 213,
+      "svgContent": null,
+      "colors": [],
+      "isLight": false,
+      "isDark": false,
+      "needsDarkBackground": false,
+      "needsLightBackground": false,
+      "_score": 115,
+      "uploadedUrl": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d87b1be5-11e3-48b6-bf9d-a561180ddaad.png"
+    }
+  },
+  "fonts": {
+    "computed": [
+      {
+        "family": "Montserrat, Helvetica, Arial, Lucida, sans-serif",
+        "weights": [
+          "500",
+          "600"
+        ],
+        "source": "web"
+      },
+      {
+        "family": "Arial, Helvetica, Arial, Lucida, sans-serif",
+        "weights": [
+          "500",
+          "600",
+          "700"
+        ],
+        "source": "web"
+      },
+      {
+        "family": "Helvetica, Arial, serif",
+        "weights": [
+          "500"
+        ],
+        "source": "web"
+      },
+      {
+        "family": "Helvetica, Arial",
+        "weights": [
+          "500",
+          "400"
+        ],
+        "source": "web"
+      }
+    ],
+    "baseSizePx": 14
+  },
+  "confidence": {
+    "colorExtraction": 0.9,
+    "logoDetection": 0.85,
+    "fontDetection": 0.8
+  },
+  "screenshot": {
+    "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/screenshot.png",
+    "width": 1920,
+    "height": 4999,
+    "sizeBytes": 7861564,
+    "uploadedAt": "2026-08-03T23:58:41.186Z"
+  },
+  "assets": {
+    "d87b1be5-11e3-48b6-bf9d-a561180ddaad": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d87b1be5-11e3-48b6-bf9d-a561180ddaad.png",
+      "name": "Tina-logo-cisti.png",
+      "type": "image",
+      "description": "Logo/Icon: Circular badge featuring a blue and white soccer ball with red and black ribbon/banner element at bottom right, established 1992. The design is centered within a red circular border with text around the perimeter. Clean, symmetrical composition with white negative space, suitable for use as header or accent element in layouts.",
+      "metadata": {
+        "size": "64.72 KB",
+        "mimeType": "image/png",
+        "sizeBytes": 66278,
+        "uploadedAt": "2026-08-03T23:58:41.485Z"
+      }
+    },
+    "d454e71d-50bf-44fe-9752-4c36f4fff9df": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d454e71d-50bf-44fe-9752-4c36f4fff9df.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.13.jpeg",
+      "type": "image",
+      "description": "Promotional Poster: Dark background with yellow text header \"RAŠTANE KUP 2026\" and soccer ball imagery. Event details and registration information are arranged in left-aligned text blocks with green accent bar across top third. Footer contains silhouette of crowd. Design has busy information hierarchy with clear focal point at top; dark background allows for light text overlay placement.",
+      "metadata": {
+        "size": "427.30 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 437560,
+        "uploadedAt": "2026-08-03T23:58:41.480Z"
+      }
+    },
+    "0403c22c-c20f-4375-831f-769060fa5f9d": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/0403c22c-c20f-4375-831f-769060fa5f9d.jpg",
+      "name": "WhatsApp-Image-2026-02-09-at-20.58.08.jpeg",
+      "type": "image",
+      "description": "Action Photograph: Nighttime soccer match on illuminated artificial turf field with multiple players in blue and dark jerseys mid-play. Wide horizontal composition with players distributed across center and sidelines; bright field lighting creates contrast with dark sky. Natural documentary style with spectators visible at right edge, suitable for dynamic banner backgrounds or feature images.",
+      "metadata": {
+        "size": "85.27 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 87313,
+        "uploadedAt": "2026-08-03T23:58:41.791Z"
+      }
+    },
+    "28deac43-52e1-4b55-922a-4859a83b7c01": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/28deac43-52e1-4b55-922a-4859a83b7c01.jpg",
+      "name": "DOC-20240309-WA0010_240729_164917_page-00012-scaled.jpg",
+      "type": "image",
+      "description": "Logo: \"Poliklinika RIBNJAK\" text on solid dark blue background with stylized white decorative symbol to left of text. Minimal, professional design with balanced spacing; clean sans-serif typography. High contrast and centered composition make it ideal for header placement or repeated branding across layouts.",
+      "metadata": {
+        "size": "93.68 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 95927,
+        "uploadedAt": "2026-08-03T23:58:41.652Z"
+      }
+    },
+    "3639a478-5253-44c1-8e3a-b665be80b32c": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/3639a478-5253-44c1-8e3a-b665be80b32c.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.13-1.jpeg",
+      "type": "image",
+      "description": "Aerial Photograph: Resort pool area with multiple blue pools, surrounding loungers and landscaping, multi-story hotel building in background under bright daylight. Compositional depth from foreground green vegetation through pool decks to building; neutral-to-cool daylight palette with vibrant blue water. Suitable for horizontal banner or background image with text placement at top or sides.",
+      "metadata": {
+        "size": "164.75 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 168709,
+        "uploadedAt": "2026-08-03T23:58:41.541Z"
+      }
+    },
+    "9d9bab5e-8271-40bf-a978-2facfafc9590": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/9d9bab5e-8271-40bf-a978-2facfafc9590.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.13-2.jpeg",
+      "type": "image",
+      "description": "Architectural Photograph: Modern indoor/outdoor pool facility at dusk with illuminated building complex behind large blue lap pool. Horizontal composition with pool spanning lower two-thirds, warm building lighting contrasting cool water and blue-hour sky. Strong depth and inviting aesthetic; ample sky space at top for text overlay.",
+      "metadata": {
+        "size": "88.43 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 90556,
+        "uploadedAt": "2026-08-03T23:58:42.175Z"
+      }
+    },
+    "9ffee81c-bc0f-4fa0-b708-6db09dd8b21c": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/9ffee81c-bc0f-4fa0-b708-6db09dd8b21c.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.14-1.jpeg",
+      "type": "image",
+      "description": "Interior Photograph: Modern hotel bedroom with queen bed, wood headboard with blue accent wall, wooden nightstands, and doorway visible at left. Warm wood tones and blue textiles against white walls; soft interior lighting. Centered bed composition with usable negative space on left side; intimate, clean aesthetic suitable for accommodation promotion.",
+      "metadata": {
+        "size": "97.34 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 99673,
+        "uploadedAt": "2026-08-03T23:58:42.168Z"
+      }
+    },
+    "96fc6da2-e6f0-4f32-87dc-d738460920a1": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/96fc6da2-e6f0-4f32-87dc-d738460920a1.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.14.jpeg",
+      "type": "image",
+      "description": "Interior Photograph: Hotel bedroom with artistic blue mural headboard featuring jellyfish illustration, white bedding, warm accent lighting on wooden headboard frame. Cool blue mural contrasts warm wood and ambient lighting; intimate centered composition. Artistic, contemporary style with interesting visual element that could anchor design layouts.",
+      "metadata": {
+        "size": "147.99 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 151545,
+        "uploadedAt": "2026-08-03T23:58:42.083Z"
+      }
+    },
+    "68057a42-7de5-486f-9f71-8034e54e9e42": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/68057a42-7de5-486f-9f71-8034e54e9e42.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.14-3.jpeg",
+      "type": "image",
+      "description": "Interior Photograph: Modern café or restaurant with blue wall paneling, white service counter at left, warm dome light fixture, and seating area with tables and chairs toward right. Horizontal composition with strong color blocking (blue, white, warm accent tones) and clean sightline through space. Bright, contemporary aesthetic with balanced left-to-right flow suitable for horizontal banner placement.",
+      "metadata": {
+        "size": "202.86 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 207724,
+        "uploadedAt": "2026-08-03T23:58:42.048Z"
+      }
+    },
+    "c1a41105-afb0-485c-8af8-8ea2045facc4": {
+      "url": "https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/c1a41105-afb0-485c-8af8-8ea2045facc4.jpg",
+      "name": "WhatsApp-Image-2026-03-12-at-09.34.14-2.jpeg",
+      "type": "image",
+      "description": "Daytime Photograph: Outdoor swimming pool with multiple swimmers and bathers, sunny weather with blue sky and clouds, trees visible beyond facility fencing, building structure at right edge. Wide horizontal composition with pool spanning center and crowd distributed across surface; bright natural lighting and cheerful summer atmosphere. Ample sky space at top for text overlay; active, community-focused imagery.",
+      "metadata": {
+        "size": "440.17 KB",
+        "mimeType": "image/jpeg",
+        "sizeBytes": 450730,
+        "uploadedAt": "2026-08-03T23:58:42.366Z"
+      }
+    }
+  }
+}

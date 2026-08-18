@@ -1,0 +1,13 @@
+import type { Metadata } from "next";
+import Image from "next/image";
+import { PageHero } from "@/components/page-hero";
+import { site } from "@/lib/data";
+
+export const metadata: Metadata = { title: "O nama", description: "Priča o Tina Šport–Pia ligi, koja od 1992. okuplja mlade nogometaše.", alternates: { canonical: "/o-nama" } };
+
+export default function AboutPage() {
+  return <><PageHero eyebrow="Naša priča" title="Od 1992." copy="Više od tri desetljeća prostora za igru, odrastanje i prve velike sportske uspomene." word="Srce" image="/images/pexels-pixabay-262524.jpg" /><section className="section section-white"><div className="shell story-grid">
+    <aside className="story-sticky"><span className="eyebrow">Tina Šport–Pia</span><h2>Liga za više od rezultata.</h2><div className="story-media"><Image src="/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg" alt="Večernja utakmica mladih nogometaša na osvijetljenom terenu Trnovčice" fill sizes="(max-width: 760px) 100vw, 38vw" /></div><div className="organizer-note"><span>Organizator lige</span><strong>{site.organizer}</strong><small>Tina Šport–Pia · Zagreb</small></div></aside>
+    <article className="story-copy"><p>Malonogometna liga Tina Šport–Pia traje još od proljeća 1992. godine. Organizirana je za nogometne škole i malonogometne klubove, s jednostavnom idejom: djeci dati sigurno mjesto za igru, natjecanje i razvoj.</p><p>Sport djeci pomaže graditi samopouzdanje, disciplinu i osjećaj pripadnosti. Kroz više od trideset godina našim je terenima prošao velik broj malih nogometaša — svaki sa svojim prvim golom, ekipom i pričom.</p><blockquote className="quote">“Sva djeca trebaju malo pomoći, malo nade i nekoga tko vjeruje u njih.”</blockquote><p>A mi vjerujemo u naše malonogometaše. Zato svaku sezonu nastojimo učiniti preglednom za roditelje, uzbudljivom za igrače i fer za sve ekipe.</p><div className="about-photo-pair"><div><Image src="/images/Naslovna-fotka-2.jpg" alt="Nogometna lopta u mreži kao simbol početka svake utakmice" fill sizes="(max-width: 760px) 100vw, 28vw" /></div><div><Image src="/images/pexels-sergio-souza-9735734.jpg" alt="Pogled na nogometni teren i tribine" fill sizes="(max-width: 760px) 100vw, 28vw" /></div></div><div className="values-grid"><div className="value-card"><span>01</span><h3>Razvoj</h3><p>Učenje kroz igru, trening i sportsko ponašanje.</p></div><div className="value-card"><span>02</span><h3>Zajedništvo</h3><p>Prijateljstva i osjećaj ekipe koji ostaju nakon utakmice.</p></div><div className="value-card"><span>03</span><h3>Fair play</h3><p>Poštovanje protivnika, sudaca, trenera i igre.</p></div></div></article>
+  </div></section></>;
+}

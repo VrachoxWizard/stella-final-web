@@ -1,0 +1,13 @@
+.superdesign
+.next
+node_modules
+test-results
+playwright-report
+coverage
+/tests
+/css
+/js
+/fonts
+/images
+/media
+/index.html
