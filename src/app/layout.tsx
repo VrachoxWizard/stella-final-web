@@ -31,7 +31,13 @@ export const metadata: Metadata = {
   twitter: { card: "summary_large_image", title: site.name, description: site.description, images: ["/images/Naslovna-fotka-2.jpg"] },
 };
 
-export const viewport: Viewport = { themeColor: "#07162f", colorScheme: "light" };
+export const viewport: Viewport = {
+  themeColor: "#07162f",
+  colorScheme: "light",
+  // Ensures correct layout scaling on mobile browsers.
+  width: "device-width",
+  initialScale: 1,
+};
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
