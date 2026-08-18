@@ -338,7 +338,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .menu-toggle { display: grid; }
   /* `site-header.tsx` conditionally renders `.mobile-menu` when `mobileOpen=true`.
      Keep it visible by default (no `.mobile-nav[open]` dependency), so the toggle works. */
-  .mobile-menu { position: absolute; top: 100%; right: 0; left: 0; display: block; min-height: calc(100dvh - var(--header-height)); overflow-y: auto; color: var(--white); background: var(--navy); opacity: 1; visibility: visible; transform: none; transition: 180ms ease; padding-bottom: env(safe-area-inset-bottom); z-index: 101; }
+  .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; display: block; overflow-y: auto; color: var(--white); background: var(--navy); opacity: 1; visibility: visible; transform: none; transition: 180ms ease; padding-bottom: env(safe-area-inset-bottom); z-index: 101; }
   .mobile-nav[open] .mobile-menu { opacity: 1; visibility: visible; transform: none; }
   .mobile-menu nav { width: var(--shell); margin: 30px auto; }
   .mobile-menu a { display: flex; align-items: center; justify-content: space-between; padding: 19px 2px; border-bottom: 1px solid rgba(255,255,255,.12); font-family: var(--display); font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1; text-transform: uppercase; opacity: 1; transform: none; }
@@ -360,7 +360,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .brand img { width: 52px; height: 52px; }
   .brand strong { font-size: 1.15rem; }
   .brand small { letter-spacing: .16em; }
-  .mobile-menu { top: 100%; min-height: calc(100dvh - var(--header-height)); padding-bottom: env(safe-area-inset-bottom); }
+  .mobile-menu { top: var(--header-height); bottom: 0; min-height: auto; padding-bottom: env(safe-area-inset-bottom); }
   .mobile-menu nav { margin: 20px auto; }
   .mobile-menu a {
     min-height: 58px;
@@ -622,7 +622,7 @@ body.menu-open, body.lightbox-open { overflow: hidden; }
 
 @media (max-width: 1050px) {
   .menu-toggle { display: grid; }
-  .mobile-menu { position: absolute; top: 100%; right: 0; left: 0; display: block; min-height: calc(100dvh - var(--header-height)); overflow-y: auto; color: var(--white); background: rgba(7,22,47,.99); opacity: 1; visibility: visible; transform: none; padding-bottom: env(safe-area-inset-bottom); z-index: 101; }
+  .mobile-menu { position: fixed; top: var(--header-height); left: 0; right: 0; bottom: 0; display: block; overflow-y: auto; color: var(--white); background: rgba(7,22,47,.99); opacity: 1; visibility: visible; transform: none; padding-bottom: env(safe-area-inset-bottom); z-index: 101; }
   .mobile-menu nav { width: var(--shell); margin: 22px auto; }
   .mobile-menu nav > a { display: flex; min-height: 64px; align-items: center; justify-content: space-between; padding: 14px 2px; border-bottom: 1px solid rgba(255,255,255,.12); font-family: var(--display); font-size: clamp(2rem, 7vw, 3.6rem); line-height: 1; text-transform: uppercase; animation: menu-in 220ms ease both; animation-delay: calc(var(--i) * 35ms); }
   .mobile-menu nav > a.active { color: var(--red); }
