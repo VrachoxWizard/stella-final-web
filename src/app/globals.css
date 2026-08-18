@@ -625,6 +625,14 @@ body.menu-open, body.lightbox-open { overflow: hidden; }
   .rastane-mosaic { grid-template-columns: repeat(2, 1fr); }
 }
 
+@media (max-width: 760px) {
+  /* Re-apply phone layout after the later <=1050px block above. */
+  .hero-grid { grid-template-columns: 1fr; }
+  .rastane-story { grid-template-columns: 1fr; }
+  .rastane-content { padding: 58px 14px; }
+  .rastane-mosaic { grid-template-columns: 1fr 1fr; margin-top: 36px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .reveal.reveal-ready, .reveal.reveal-ready.is-visible { opacity: 1; transform: none; clip-path: none; }
   .ticker-track { animation: none; }
