@@ -37,7 +37,7 @@ export default async function HomePage() {
     <MatchdayFilm />
 
     {rastane && <section className="rastane-story">
-      <div className="rastane-poster"><Image src={rastane.image} alt="Službena najava Raštane kupa 2026" fill sizes="(max-width: 900px) 100vw, 44vw" /></div>
+      <div className="rastane-poster"><Image src={rastane.image} alt="Službena najava Raštane kupa 2026" fill sizes="(max-width: 900px) 100vw, 44vw" style={{ objectFit: "contain", objectPosition: "center top" }} /></div>
       <div className="rastane-content"><Reveal><span className="eyebrow">Aktualno</span><h2>{rastane.title}</h2><p>{rastane.excerpt}</p>{rastane.cta && <Link className="button" href={rastane.cta.href}>{rastane.cta.label}</Link>}</Reveal><div className="rastane-mosaic">{rastaneGallery.map((image, index) => <Reveal key={image.id} delay={index * .04} className="rastane-tile"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 50vw, 18vw" /></Reveal>)}</div></div>
     </section>}
 
