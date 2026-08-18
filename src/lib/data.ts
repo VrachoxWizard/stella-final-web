@@ -88,9 +88,18 @@ export const matches: Match[] = [
 
 export const announcements: Announcement[] = [
   {
+    id: "skradin-2026",
+    type: "tournament",
+    title: "Kup grada Skradina",
+    excerpt: "Nogometni vikend u Skradinu, smještaj uz more i zajedničke trenutke koje mladi igrači pamte. Pogledajte fotografije s turnira u Hotelu Punta.",
+    image: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg",
+    date: "2026-08-18",
+    cta: { label: "Pogledaj galeriju", href: "/galerija" },
+  },
+  {
     id: "rastane-2026",
     type: "tournament",
-    title: "Raštane kup 2026",
+    title: "Kup grada Skradina",
     excerpt: "Nogometni vikend, snažne utakmice i iskustvo koje mladi igrači pamte. Pratite objave i informacije organizatora.",
     image: "/images/WhatsApp-Image-2026-03-12-at-09.34.13.jpeg",
     date: "2026-02-09",
@@ -112,16 +121,41 @@ export const gallery: GalleryImage[] = [
   { id: "g2", src: "/images/Naslovna-fotka-2.jpg", alt: "Nogometna lopta u mreži uz grb Tina Šport lige", width: 1920, height: 1281 },
   { id: "g3", src: "/images/pexels-pixabay-262524.jpg", alt: "Nogometna momčad okupljena prije utakmice", width: 1920, height: 1280 },
   { id: "g4", src: "/images/pexels-sergio-souza-9735734.jpg", alt: "Pogled iz zraka na nogometni stadion", width: 1920, height: 1080 },
-  { id: "g5", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13.jpeg", alt: "Službena najava nogometnog turnira Raštane kup 2026", width: 1024, height: 1536 },
-  { id: "g6", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13-1.jpeg", alt: "Pogled na bazene i smještaj sudionika Raštane kupa", width: 1000, height: 667 },
-  { id: "g7", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13-2.jpeg", alt: "Večernji pogled na bazen i hotelski kompleks u Raštanima", width: 1000, height: 667 },
+  { id: "g5", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13.jpeg", alt: "Službena najava nogometnog turnira Kup grada Skradina", width: 1024, height: 1536 },
+  { id: "g6", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13-1.jpeg", alt: "Pogled na bazene i smještaj sudionika Kupa grada Skradina", width: 1000, height: 667 },
+  { id: "g7", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.13-2.jpeg", alt: "Večernji pogled na bazen i hotelski kompleks tijekom Kupa grada Skradina", width: 1000, height: 667 },
   { id: "g8", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.14.jpeg", alt: "Hotelska soba s plavim muralom za sudionike sportskog putovanja", width: 1600, height: 1066 },
   { id: "g9", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.14-1.jpeg", alt: "Smještaj pripremljen za mlade sudionike turnira", width: 1599, height: 1066 },
   { id: "g10", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.14-2.jpeg", alt: "Zajedničko kupanje i odmor tijekom turnirskog putovanja", width: 2048, height: 1152 },
-  { id: "g11", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.14-3.jpeg", alt: "Zajednički prostor hotela za sudionike Raštane kupa", width: 1600, height: 1066 },
+  { id: "g11", src: "/images/WhatsApp-Image-2026-03-12-at-09.34.14-3.jpeg", alt: "Zajednički prostor hotela za sudionike Kupa grada Skradina", width: 1600, height: 1066 },
+  { id: "g12", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.37.jpeg", alt: "Kup grada Skradina — bazen uz more s ležaljkama i borovima", width: 1620, height: 1080 },
+  { id: "g13", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.37-1.jpeg", alt: "Kup grada Skradina — šljunčana plaža s ležaljkama u hladu borova", width: 2048, height: 1365 },
+  { id: "g14", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.37-2.jpeg", alt: "Kup grada Skradina — svježe voće na doručku za sudionike", width: 2040, height: 1536 },
+  { id: "g15", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.37-3.jpeg", alt: "Kup grada Skradina — vanjski lounge s pogledom na more", width: 1620, height: 1080 },
+  { id: "g16", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.37-4.jpeg", alt: "Kup grada Skradina — poslastice poslužene sudionicima turnira", width: 2040, height: 1536 },
+  { id: "g17", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38.jpeg", alt: "Kup grada Skradina — recepcija i lobby smještaja za sudionike", width: 2048, height: 1366 },
+  { id: "g18", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38-1.jpeg", alt: "Kup grada Skradina — topli obrok na buffet stolu", width: 2040, height: 1536 },
+  { id: "g19", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38-2.jpeg", alt: "Kup grada Skradina — sauna za odmor nakon utakmica", width: 2048, height: 1365 },
+  { id: "g20", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38-3.jpeg", alt: "Kup grada Skradina — večernja terasa s pogledom na more", width: 720, height: 1080 },
+  { id: "g21", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38-4.jpeg", alt: "Kup grada Skradina — doručak i ručak na self-service stolu", width: 2040, height: 1536 },
+  { id: "g22", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.38-5.jpeg", alt: "Kup grada Skradina — hotel s bazenom i ležaljkama", width: 1024, height: 640 },
+  { id: "g23", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39.jpeg", alt: "Kup grada Skradina — trofeji i medalje prije dodjele nagrada", width: 2040, height: 1536 },
+  { id: "g24", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-1.jpeg", alt: "Kup grada Skradina — dvokrevetna soba za mlade sudionike", width: 2048, height: 1323 },
+  { id: "g25", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-2.jpeg", alt: "Kup grada Skradina — pečeni krumpir i meso na buffet stolu", width: 2040, height: 1536 },
+  { id: "g26", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-3.jpeg", alt: "Kup grada Skradina — balkon s cvijećem i pogledom na more", width: 720, height: 1080 },
+  { id: "g27", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-4.jpeg", alt: "Kup grada Skradina — pogled s balkona na more i jedrilicu", width: 1334, height: 2000 },
+  { id: "g28", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-5.jpeg", alt: "Kup grada Skradina — moderna hotelska soba za sudionike", width: 2048, height: 1251 },
+  { id: "g29", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg", alt: "Kup grada Skradina — Hotel Punta, domaćin turnirskog vikenda", width: 2048, height: 1349 },
+  { id: "g30", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.39-7.jpeg", alt: "Kup grada Skradina — restoran spreman za zajednički obrok", width: 2048, height: 1365 },
+  { id: "g31", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.40.jpeg", alt: "Kup grada Skradina — doručak na toplom stolu za ekipe", width: 1600, height: 1200 },
+  { id: "g32", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.40-1.jpeg", alt: "Kup grada Skradina — hotel i sunčana terasa uz more", width: 2000, height: 1334 },
+  { id: "g33", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.40-2.jpeg", alt: "Kup grada Skradina — terasa s ležaljkama i pogledom na more", width: 2000, height: 1334 },
+  { id: "g34", src: "/images/WhatsApp-Image-2026-08-18-at-12.11.40-3.jpeg", alt: "Kup grada Skradina — panoramski pogled na obalu i smještaj", width: 1024, height: 575 },
 ];
 
 export const rastaneGallery = gallery.filter((image) => ["g6", "g7", "g8", "g9", "g10", "g11"].includes(image.id));
+
+export const skradinGallery = gallery.filter((image) => ["g12", "g13", "g23", "g29", "g32", "g34"].includes(image.id));
 
 export const sponsorFallback: Sponsor = {
   name: "Poliklinika Ribnjak",

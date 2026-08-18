@@ -7,7 +7,7 @@ import { MatchdayFilm } from "@/components/matchday-film";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
 import { SponsorCard } from "@/components/sponsor-card";
-import { rastaneGallery } from "@/lib/data";
+import { rastaneGallery, skradinGallery } from "@/lib/data";
 import { getAnnouncements, getGallery, getMatches, getSponsor } from "@/lib/content";
 
 const heroDate = new Intl.DateTimeFormat("hr-HR", { weekday: "long", day: "numeric", month: "long", year: "numeric", hour: "2-digit", minute: "2-digit" });
@@ -16,8 +16,10 @@ export default async function HomePage() {
   const [matches, announcements, gallery, sponsor] = await Promise.all([getMatches(), getAnnouncements(), getGallery(), getSponsor()]);
   const fixtures = matches.filter((match) => match.status === "scheduled").slice(0, 3);
   const featured = fixtures[0];
-  const rastane = announcements.find((item) => item.id === "rastane-2026") ?? announcements.find((item) => item.type === "tournament");
+  const skradin = announcements.find((item) => item.id === "skradin-2026");
+  const rastane = announcements.find((item) => item.id === "rastane-2026");
   const trnovcica = announcements.find((item) => item.id === "trnovcica-proljece") ?? announcements.find((item) => item.type === "notice");
+  const galleryPreview = ["g1", "g2", "g5", "g29", "g23"].map((id) => gallery.find((image) => image.id === id)).filter((image): image is NonNullable<typeof image> => Boolean(image));
 
   return <>
     <section className="hero">
@@ -36,8 +38,13 @@ export default async function HomePage() {
 
     <MatchdayFilm />
 
-    {rastane && <section className="rastane-story">
-      <div className="rastane-poster"><Image src={rastane.image} alt="Službena najava Raštane kupa 2026" fill sizes="(max-width: 900px) 100vw, 44vw" style={{ objectFit: "contain", objectPosition: "center top" }} /></div>
+    {skradin && <section className="rastane-story">
+      <div className="rastane-poster"><Image src={skradin.image} alt="Hotel Punta — domaćin Kupa grada Skradina" fill sizes="(max-width: 900px) 100vw, 44vw" style={{ objectFit: "cover", objectPosition: "center" }} /></div>
+      <div className="rastane-content"><Reveal><span className="eyebrow">Aktualno</span><h2>{skradin.title}</h2><p>{skradin.excerpt}</p>{skradin.cta && <Link className="button" href={skradin.cta.href}>{skradin.cta.label}</Link>}</Reveal><div className="rastane-mosaic">{skradinGallery.map((image, index) => <Reveal key={image.id} delay={index * .04} className="rastane-tile"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 50vw, 18vw" /></Reveal>)}</div></div>
+    </section>}
+
+    {rastane && <section className="rastane-story rastane-story--reverse">
+      <div className="rastane-poster"><Image src={rastane.image} alt="Službena najava Kupa grada Skradina" fill sizes="(max-width: 900px) 100vw, 44vw" style={{ objectFit: "contain", objectPosition: "center top" }} /></div>
       <div className="rastane-content"><Reveal><span className="eyebrow">Aktualno</span><h2>{rastane.title}</h2><p>{rastane.excerpt}</p>{rastane.cta && <Link className="button" href={rastane.cta.href}>{rastane.cta.label}</Link>}</Reveal><div className="rastane-mosaic">{rastaneGallery.map((image, index) => <Reveal key={image.id} delay={index * .04} className="rastane-tile"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 50vw, 18vw" /></Reveal>)}</div></div>
     </section>}
 
@@ -45,6 +52,6 @@ export default async function HomePage() {
 
     {trnovcica && <section className="community-feature"><Reveal className="community-copy"><span className="eyebrow">Lokalna zajednica</span><h2>{trnovcica.title}</h2><p>{trnovcica.excerpt}</p>{trnovcica.cta && <Link className="button" href={trnovcica.cta.href}>{trnovcica.cta.label}</Link>}</Reveal><div className="community-image"><Image src={trnovcica.image} alt="Večernja utakmica mladih nogometaša na terenu DSR Trnovčica" fill sizes="(max-width: 760px) 100vw, 52vw" /></div></section>}
 
-    <section className="section section-white"><div className="shell"><Reveal><SectionHeading eyebrow="Iza rezultata" title="Trenuci koji se pamte" copy="Pogledajte atmosferu, ekipe i emocije koje čine Tina Šport–Pia ligu." href="/galerija" linkLabel="Otvori galeriju" /></Reveal><div className="gallery-preview">{gallery.slice(0, 5).map((image) => <Link key={image.id} href="/galerija"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 60vw, 40vw" /><span><ArrowUpRight aria-hidden="true" /></span></Link>)}</div></div></section>
+    <section className="section section-white"><div className="shell"><Reveal><SectionHeading eyebrow="Iza rezultata" title="Trenuci koji se pamte" copy="Pogledajte atmosferu, ekipe i emocije koje čine Tina Šport–Pia ligu." href="/galerija" linkLabel="Otvori galeriju" /></Reveal><div className="gallery-preview">{galleryPreview.map((image) => <Link key={image.id} href="/galerija"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 60vw, 40vw" /><span><ArrowUpRight aria-hidden="true" /></span></Link>)}</div></div></section>
   </>;
 }

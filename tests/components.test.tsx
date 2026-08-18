@@ -79,6 +79,7 @@ describe("matchday components", () => {
   });
 
   it("maps each announcement to the correct supplied WordPress image", () => {
+    expect(announcements.find(({ id }) => id === "skradin-2026")?.image).toBe("/images/WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg");
     expect(announcements.find(({ id }) => id === "rastane-2026")?.image).toBe("/images/WhatsApp-Image-2026-03-12-at-09.34.13.jpeg");
     expect(announcements.find(({ id }) => id === "trnovcica-proljece")?.image).toBe("/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg");
   });

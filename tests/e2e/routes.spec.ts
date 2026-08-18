@@ -59,6 +59,7 @@ test("original film is requested only after an explicit play action", async ({ p
 test("homepage renders the correct announcement and sponsor assets", async ({ page }) => {
   await page.goto("/");
 
+  await expect(page.locator('img[src*="WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg"]').first()).toBeAttached();
   await expect(page.locator('img[src*="WhatsApp-Image-2026-03-12-at-09.34.13.jpeg"]').first()).toBeAttached();
   await expect(page.locator('img[src*="WhatsApp-Image-2026-02-09-at-20.58.08.jpeg"]').first()).toBeAttached();
   await expect(page.getByAltText(/Poliklinika Ribnjak, službeni sponzor/i)).toBeAttached();
