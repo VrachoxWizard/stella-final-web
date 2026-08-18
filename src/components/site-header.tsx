@@ -41,33 +41,35 @@ export function SiteHeader() {
   }, []);
 
   return (
-    <header ref={headerRef} className="site-header">
-      <div className="shell header-inner">
-        <Link className="brand" href="/" aria-label="Tina Šport–Pia, početna" onClick={() => setMobileOpen(false)}>
-          <Image src="/images/Tina-logo-cisti.png" width={72} height={72} alt="Grb Tina Šport–Pia" preload />
-          <span><strong>Tina Šport</strong><small>Pia liga</small></span>
-        </Link>
-        <nav className="desktop-nav" aria-label="Glavna navigacija">
-          {links.slice(0, 2).map((link) => <Link key={link.href} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href}>{link.label}</Link>)}
-          <details className={`desktop-age-menu ${ageActive ? "active" : ""}`}>
-            <summary>Uzrasti <ChevronDown size={15} aria-hidden="true" /></summary>
-            <div className="age-submenu">
-              {ageYears.map((year) => <Link key={year} aria-current={pathname === `/uzrasti/${year}` ? "page" : undefined} className={pathname === `/uzrasti/${year}` ? "active" : ""} href={`/uzrasti/${year}`}>Uzrast {year}</Link>)}
-            </div>
-          </details>
-          {links.slice(2).map((link) => <Link key={link.href} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href}>{link.label}</Link>)}
-        </nav>
-        <Link className="button button-small header-cta" href="/raspored">Sljedeće utakmice</Link>
-        <button className="menu-toggle" type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Zatvori izbornik" : "Otvori izbornik"} onClick={() => setMobileOpen((open) => !open)}>
-          {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
-        </button>
-      </div>
+    <>
+      <header ref={headerRef} className="site-header">
+        <div className="shell header-inner">
+          <Link className="brand" href="/" aria-label="Tina Šport–Pia, početna" onClick={() => setMobileOpen(false)}>
+            <Image src="/images/Tina-logo-cisti.png" width={72} height={72} alt="Grb Tina Šport–Pia" preload />
+            <span><strong>Tina Šport</strong><small>Pia liga</small></span>
+          </Link>
+          <nav className="desktop-nav" aria-label="Glavna navigacija">
+            {links.slice(0, 2).map((link) => <Link key={link.href} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href}>{link.label}</Link>)}
+            <details className={`desktop-age-menu ${ageActive ? "active" : ""}`}>
+              <summary>Uzrasti <ChevronDown size={15} aria-hidden="true" /></summary>
+              <div className="age-submenu">
+                {ageYears.map((year) => <Link key={year} aria-current={pathname === `/uzrasti/${year}` ? "page" : undefined} className={pathname === `/uzrasti/${year}` ? "active" : ""} href={`/uzrasti/${year}`}>Uzrast {year}</Link>)}
+              </div>
+            </details>
+            {links.slice(2).map((link) => <Link key={link.href} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href}>{link.label}</Link>)}
+          </nav>
+          <Link className="button button-small header-cta" href="/raspored">Sljedeće utakmice</Link>
+          <button className="menu-toggle" type="button" aria-expanded={mobileOpen} aria-controls="mobile-menu" aria-label={mobileOpen ? "Zatvori izbornik" : "Otvori izbornik"} onClick={() => setMobileOpen((open) => !open)}>
+            {mobileOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
+          </button>
+        </div>
+      </header>
       {mobileOpen && <div className="mobile-menu" id="mobile-menu">
         <nav className="shell" aria-label="Mobilna navigacija">
           {links.map((link, index) => <Link key={link.href} style={{ "--i": index } as React.CSSProperties} aria-current={isActive(link.href) ? "page" : undefined} className={isActive(link.href) ? "active" : ""} href={link.href} onClick={() => setMobileOpen(false)}>{link.label}<span aria-hidden="true">↗</span></Link>)}
           <div className="mobile-age-group"><span>Uzrasti</span><div>{ageYears.map((year) => <Link key={year} aria-current={pathname === `/uzrasti/${year}` ? "page" : undefined} className={pathname === `/uzrasti/${year}` ? "active" : ""} href={`/uzrasti/${year}`} onClick={() => setMobileOpen(false)}>U{year}</Link>)}</div></div>
         </nav>
       </div>}
-    </header>
+    </>
   );
 }
