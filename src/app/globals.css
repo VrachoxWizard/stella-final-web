@@ -425,6 +425,8 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .rastane-content, .community-copy { padding: 58px 14px; }
   .rastane-mosaic { margin-top: 36px; }
   .community-image { min-height: 430px; }
+  /* Mobile: make right-side photo content more visible */
+  .community-image img { object-position: center 25%; filter: saturate(1.18) contrast(1.08) brightness(1.1); }
   .sponsor-card { gap: 38px; }
   .sponsor-caption { text-align: left; }
   .sponsor-caption .eyebrow { justify-content: flex-start; }
