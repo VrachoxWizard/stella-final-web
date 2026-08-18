@@ -432,9 +432,11 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .sponsor-caption .eyebrow { justify-content: flex-start; }
   .sponsor-caption p, .community-copy p, .rastane-content p, .story-copy p { line-height: 1.65; text-wrap: pretty; }
   .schedule-controls { top: calc(var(--header-height) + 8px); display: grid; margin-top: -10px; padding: 12px; }
-  .filter-bar { flex-wrap: nowrap; max-width: 100%; overflow-x: auto; padding-bottom: 4px; }
-  .filter-bar button { flex: 0 0 auto; min-height: 44px; }
+  .filter-bar { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); max-width: 100%; overflow: visible; padding-bottom: 0; }
+  .filter-bar button { width: 100%; min-height: 44px; }
+  .filter-bar button:first-child { grid-column: 1 / -1; }
   .date-filter { width: 100%; }
+  .date-filter select { width: 100%; }
   .competition-tabs { top: var(--header-height); }
   .lightbox { grid-template-columns: 1fr; padding: 70px 14px 84px; }
   .lightbox-figure { width: 100%; }
@@ -475,6 +477,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .footer-brand, .footer-contact { grid-column: auto; }
   .footer-bottom { display: grid; gap: 8px; }
   .mobile-age-group > div { grid-template-columns: repeat(2, 1fr); }
+  .filter-bar { grid-template-columns: 1fr 1fr; }
   .rastane-mosaic { grid-template-columns: 1fr 1fr; }
   .gallery-preview { grid-template-columns: 1fr 1fr; grid-template-rows: 250px 170px; }
   .gallery-preview a:first-child { grid-column: 1 / -1; grid-row: auto; }
