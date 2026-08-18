@@ -490,6 +490,21 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
 
 /* Modern Legacy Cinema */
 body.menu-open, body.lightbox-open { overflow: hidden; }
+
+/* Mobile menu overlay should be controlled by actual toggle state (`body.menu-open`),
+   not only by viewport width. This prevents cases where the overlay doesn't appear. */
+body.menu-open .mobile-menu {
+  display: block;
+  position: fixed;
+  top: var(--header-height);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: auto;
+  z-index: 1000;
+  background: rgba(7,22,47,.99);
+  padding-bottom: env(safe-area-inset-bottom);
+}
 .site-header { background: rgba(7,22,47,.97); backdrop-filter: blur(14px); }
 .menu-toggle { display: none; flex: 0 0 46px; }
 .desktop-nav > a[aria-current="page"] { color: var(--white); }
