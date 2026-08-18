@@ -338,7 +338,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .menu-toggle { display: grid !important; z-index: 102; position: relative; }
   /* `site-header.tsx` conditionally renders `.mobile-menu` when `mobileOpen=true`.
      Keep it visible by default (no `.mobile-nav[open]` dependency), so the toggle works. */
-  .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: block; overflow-y: auto; color: var(--white); background: var(--navy); opacity: 1; visibility: visible; transform: none; transition: 180ms ease; padding-top: calc(var(--header-height) + 12px); padding-bottom: env(safe-area-inset-bottom); z-index: 99; }
+  .mobile-menu { position: fixed; top: 0; left: 0; right: 0; bottom: 0; display: block; overflow-y: auto; color: var(--white); background: var(--navy); opacity: 1; visibility: visible; transform: none; transition: 180ms ease; padding-top: calc(var(--header-height) + 4px); padding-bottom: env(safe-area-inset-bottom); z-index: 99; }
   .mobile-nav[open] .mobile-menu { opacity: 1; visibility: visible; transform: none; }
   .mobile-menu nav { width: var(--shell); margin: 30px auto; }
   .mobile-menu a { display: flex; align-items: center; justify-content: space-between; padding: 19px 2px; border-bottom: 1px solid rgba(255,255,255,.12); font-family: var(--display); font-size: clamp(2.2rem, 8vw, 4rem); line-height: 1; text-transform: uppercase; opacity: 1; transform: none; }
@@ -360,7 +360,7 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
   .brand img { width: 52px; height: 52px; }
   .brand strong { font-size: 1.15rem; }
   .brand small { letter-spacing: .16em; }
-  .mobile-menu { top: 0; bottom: 0; min-height: auto; padding-top: calc(var(--header-height) + 10px); padding-bottom: env(safe-area-inset-bottom); }
+  .mobile-menu { top: 0; bottom: 0; min-height: auto; padding-top: calc(var(--header-height) + 4px); padding-bottom: env(safe-area-inset-bottom); }
   .mobile-menu nav { margin: 20px auto; }
   .mobile-menu a {
     min-height: 58px;
@@ -503,9 +503,10 @@ body.menu-open .mobile-menu {
   overflow-y: auto;
   z-index: 99;
   background: var(--navy);
-  padding-top: calc(var(--header-height) + 12px);
+  padding-top: calc(var(--header-height) + 4px);
   padding-bottom: env(safe-area-inset-bottom);
 }
+body.menu-open .site-header .menu-toggle { visibility: hidden; pointer-events: none; }
 .site-header { background: rgba(7,22,47,.97); backdrop-filter: blur(14px); }
 .menu-toggle { display: none; flex: 0 0 46px; }
 .desktop-nav > a[aria-current="page"] { color: var(--white); }
