@@ -2,19 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowUpRight, Mail } from "lucide-react";
 import { AgeNavigation } from "@/components/age-navigation";
+import { CompetitionEmptyState } from "@/components/competition-empty-state";
 import { MatchCard } from "@/components/match-card";
 import { MatchdayFilm } from "@/components/matchday-film";
 import { Reveal } from "@/components/reveal";
 import { SectionHeading } from "@/components/section-heading";
-import { announcements as localAnnouncements, skradinGallery } from "@/lib/data";
+import { skradinGallery } from "@/lib/data";
 import { getAnnouncements, getGallery, getMatches } from "@/lib/content";
 
 export default async function HomePage() {
   const [matches, announcements, gallery] = await Promise.all([getMatches(), getAnnouncements(), getGallery()]);
   const fixtures = matches.filter((match) => match.status === "scheduled").slice(0, 3);
-  const league = localAnnouncements.find((item) => item.id === "league-registration-2026");
-  const skradin = localAnnouncements.find((item) => item.id === "skradin-2026");
-  const trnovcica = announcements.find((item) => item.id === "trnovcica-proljece") ?? announcements.find((item) => item.type === "notice");
+  const league = announcements.find((item) => item.id === "league-registration-2026");
+  const skradin = announcements.find((item) => item.id === "skradin-2026");
   const galleryPreview = ["g1", "g2", "g5", "g29", "g23"].map((id) => gallery.find((image) => image.id === id)).filter((image): image is NonNullable<typeof image> => Boolean(image));
 
   return <>
@@ -65,13 +65,11 @@ export default async function HomePage() {
       <div className="skradin-gallery">{skradinGallery.map((image, index) => <Reveal key={image.id} delay={index * .04} className="skradin-gallery-item"><Link href="/galerija" aria-label={`Otvori galeriju: ${image.alt}`}><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 50vw, 30vw" /></Link></Reveal>)}</div>
     </div></section>
 
-    <section id="raspored" className="section section-white"><div className="shell"><Reveal><SectionHeading eyebrow="Matchday · 2026." title="Raspored utakmica" copy="Sve važne informacije za dolazak na utakmicu — bez traženja po tablicama i objavama." href="/raspored" linkLabel="Cijeli raspored" /></Reveal><div className="match-grid">{fixtures.map((match, index) => <Reveal key={match.id} delay={index * .06}><MatchCard match={match} /></Reveal>)}</div></div></section>
+    <section id="raspored" className="section section-white"><div className="shell"><Reveal><SectionHeading eyebrow="Matchday" title="Raspored utakmica" copy="Sve važne informacije za dolazak na utakmicu — bez traženja po tablicama i objavama." href="/raspored" linkLabel="Cijeli raspored" /></Reveal>{fixtures.length ? <div className="match-grid">{fixtures.map((match, index) => <Reveal key={match.id} delay={index * .06}><MatchCard match={match} /></Reveal>)}</div> : <Reveal><CompetitionEmptyState /></Reveal>}</div></section>
 
     <section id="uzrasti" className="section section-navy age-section"><div className="shell"><Reveal><SectionHeading eyebrow="Generacije" title="Pronađi svoj uzrast" copy="Rezultati, aktualni poredak, strijelci i završnica na jednom mjestu." /></Reveal><Reveal><AgeNavigation /></Reveal></div></section>
 
     <MatchdayFilm />
-
-    {trnovcica && <section className="community-feature"><Reveal className="community-copy"><span className="eyebrow">Lokalna zajednica</span><h2>{trnovcica.title}</h2><p>{trnovcica.excerpt}</p>{trnovcica.cta && <Link className="button" href={trnovcica.cta.href}>{trnovcica.cta.label}</Link>}</Reveal><div className="community-image"><Image src={trnovcica.image} alt="Večernja utakmica mladih nogometaša na terenu DSR Trnovčica" fill sizes="(max-width: 760px) 100vw, 52vw" /></div></section>}
 
     <section className="section section-white"><div className="shell"><Reveal><SectionHeading eyebrow="Iza rezultata" title="Trenuci koji se pamte" copy="Pogledajte atmosferu, ekipe i emocije koje čine Tina Šport–Pia ligu." href="/galerija" linkLabel="Otvori galeriju" /></Reveal><div className="gallery-preview">{galleryPreview.map((image) => <Link key={image.id} href="/galerija"><Image src={image.src} alt={image.alt} fill sizes="(max-width: 760px) 60vw, 40vw" /><span><ArrowUpRight aria-hidden="true" /></span></Link>)}</div></div></section>
   </>;

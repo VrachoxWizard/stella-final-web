@@ -3,33 +3,31 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
+    "dev": "tinacms dev -c \"next dev\"",
+    "build": "tinacms build && next build",
+    "build:local": "tinacms build --local --skip-cloud-checks && next build",
     "start": "next start",
     "lint": "eslint .",
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
-    "e2e": "playwright test",
-    "sanity:dev": "sanity dev",
-    "sanity:deploy": "sanity deploy",
-    "sanity:seed": "sanity exec scripts/seed-sanity.ts --with-user-token"
+    "e2e": "playwright test"
   },
   "dependencies": {
     "@formspree/react": "3.0.0",
-    "@sanity/vision": "6.8.0",
     "lucide-react": "1.28.0",
     "next": "16.3.0",
-    "next-sanity": "13.2.3",
     "react": "19.2.8",
     "react-dom": "19.2.8",
-    "sanity": "6.8.0"
+    "tinacms": "^3.12.1",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
     "@axe-core/playwright": "4.12.1",
     "@playwright/test": "1.62.1",
     "@testing-library/jest-dom": "7.0.0",
     "@testing-library/react": "16.3.2",
+    "@tinacms/cli": "^2.6.1",
     "@types/node": "^24.0.0",
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",

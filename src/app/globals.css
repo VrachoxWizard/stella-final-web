@@ -253,6 +253,15 @@ h3 { font-size: clamp(1.45rem, 3vw, 2rem); }
 .results-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; margin-top: 30px; }
 .empty-state { position: relative; padding: 48px 32px; color: var(--muted); background: var(--paper-deep); text-align: center; }
 .empty-state::before { content: "—"; display: block; margin-bottom: 12px; color: var(--red); font-family: var(--display); font-size: 2rem; line-height: 1; }
+.competition-empty-state { position: relative; display: grid; grid-template-columns: auto minmax(0, 1fr) auto; align-items: center; gap: clamp(22px, 4vw, 48px); min-height: 210px; padding: clamp(30px, 5vw, 54px); overflow: hidden; border: 1px solid var(--line); border-left: 5px solid var(--red); background: linear-gradient(120deg, var(--paper-warm), var(--paper-deep)); box-shadow: var(--shadow-soft); }
+.competition-empty-state::after { content: "MATCHDAY"; position: absolute; right: -12px; bottom: -38px; color: rgba(7,22,47,.045); font-family: var(--display); font-size: clamp(5rem, 12vw, 10rem); font-weight: 800; line-height: 1; pointer-events: none; }
+.competition-empty-state > * { position: relative; z-index: 1; }
+.competition-empty-icon { display: grid; width: clamp(68px, 8vw, 92px); height: clamp(68px, 8vw, 92px); place-items: center; color: var(--white); background: var(--navy); box-shadow: 9px 9px 0 var(--red); }
+.competition-empty-icon svg { width: 38%; height: 38%; }
+.competition-empty-state h3 { margin: 9px 0 10px; color: var(--navy); font-size: clamp(2rem, 4vw, 3.4rem); }
+.competition-empty-state p { max-width: 630px; margin: 0; color: var(--muted); }
+.competition-empty-state.compact { min-height: 170px; }
+.stats-layout.single { grid-template-columns: 1fr; }
 
 .gallery-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: 12px; }
 .gallery-item { position: relative; grid-column: span 4; min-height: 330px; padding: 0; border: 0; background: var(--navy); cursor: zoom-in; overflow: hidden; }
@@ -675,6 +684,8 @@ body.menu-open .site-header .menu-toggle { visibility: hidden; pointer-events: n
   .community-copy { padding: 58px 14px; }
   .community-image { min-height: 430px; }
   .schedule-controls { position: static; display: grid; grid-template-columns: 1fr; gap: 16px; align-items: stretch; margin-top: 0; }
+  .competition-empty-state { grid-template-columns: 1fr; align-items: start; }
+  .competition-empty-state .button { justify-self: start; }
   .schedule-controls > * { min-width: 0; }
   .filter-bar { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; overflow: visible; }
   .filter-bar button { width: 100%; min-height: 44px; }

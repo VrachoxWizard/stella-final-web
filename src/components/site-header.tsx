@@ -14,9 +14,7 @@ const links = [
   { href: "/kontakt", label: "Kontakt" },
 ];
 
-const ageYears = ["2015", "2016", "2017", "2018", "2019", "2020"];
-
-export function SiteHeader() {
+export function SiteHeader({ ageYears }: { ageYears: string[] }) {
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [mobileOpen, setMobileOpen] = useState(false);

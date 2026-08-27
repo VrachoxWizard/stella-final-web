@@ -3,5 +3,5 @@ import type { MetadataRoute } from "next";
 export default function robots(): MetadataRoute.Robots {
   const base = process.env.NEXT_PUBLIC_SITE_URL ?? "https://mnk-tinasport.hr";
   if (process.env.VERCEL_ENV === "preview") return { rules: { userAgent: "*", disallow: "/" } };
-  return { rules: { userAgent: "*", allow: "/", disallow: ["/studio", "/api/"] }, sitemap: `${base}/sitemap.xml` };
+  return { rules: { userAgent: "*", allow: "/", disallow: ["/admin", "/studio", "/api/"] }, sitemap: `${base}/sitemap.xml` };
 }

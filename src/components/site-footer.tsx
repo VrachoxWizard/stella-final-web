@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Camera, Mail, MapPin, MessageCircle, Phone } from "lucide-react";
-import { ageGroups, site } from "@/lib/data";
+import { site } from "@/lib/data";
+import type { AgeGroup } from "@/lib/types";
 
-export function SiteFooter() {
+export function SiteFooter({ ageGroups }: { ageGroups: AgeGroup[] }) {
   return (
     <footer className="site-footer">
       <div className="footer-media" aria-hidden="true"><Image src="/images/pexels-pixabay-262524.jpg" alt="" fill sizes="100vw" /></div>

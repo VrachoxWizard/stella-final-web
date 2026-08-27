@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "@/app/globals.css";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
+import { getAgeGroups } from "@/lib/content";
 import { site } from "@/lib/data";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
@@ -39,7 +40,8 @@ export const viewport: Viewport = {
   initialScale: 1,
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
+  const ageGroups = await getAgeGroups();
   return (
     <html lang="hr">
       <head>
@@ -48,9 +50,9 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
       </head>
       <body>
         <a className="skip-link" href="#main-content">Preskoči na sadržaj</a>
-        <SiteHeader />
+        <SiteHeader ageYears={ageGroups.map(({ year }) => year)} />
         <main id="main-content">{children}</main>
-        <SiteFooter />
+        <SiteFooter ageGroups={ageGroups} />
       </body>
     </html>
   );

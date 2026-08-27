@@ -2,8 +2,8 @@ import Link from "next/link";
 import { CalendarDays, MapPin } from "lucide-react";
 import type { Match } from "@/lib/types";
 
-const dateFormat = new Intl.DateTimeFormat("hr-HR", { weekday: "short", day: "2-digit", month: "short" });
-const timeFormat = new Intl.DateTimeFormat("hr-HR", { hour: "2-digit", minute: "2-digit" });
+const dateFormat = new Intl.DateTimeFormat("hr-HR", { weekday: "short", day: "2-digit", month: "short", timeZone: "Europe/Zagreb" });
+const timeFormat = new Intl.DateTimeFormat("hr-HR", { hour: "2-digit", minute: "2-digit", timeZone: "Europe/Zagreb" });
 
 export function MatchCard({ match, compact = false }: { match: Match; compact?: boolean }) {
   const date = new Date(match.kickoff);

@@ -4,7 +4,7 @@ import { GalleryGrid } from "@/components/gallery-grid";
 import { MatchCard } from "@/components/match-card";
 import { MatchdayFilm } from "@/components/matchday-film";
 import { ScheduleView } from "@/components/schedule-view";
-import { ageGroups, announcements } from "@/lib/data";
+import { announcements } from "@/lib/data";
 import type { Match } from "@/lib/types";
 
 vi.mock("next/image", () => ({ default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
@@ -12,7 +12,7 @@ vi.mock("next/image", () => ({ default: (props: React.ImgHTMLAttributes<HTMLImag
   return <img {...props} alt={props.alt ?? ""} />;
 } }));
 
-const scheduled: Match = { id: "m1", ageGroup: "2015", stage: "league", round: "1", kickoff: "2026-03-21T13:00:00+01:00", venue: "SC Trnovčica", status: "scheduled", homeTeam: { id: "a", name: "Alfa" }, awayTeam: { id: "b", name: "Beta" } };
+const scheduled: Match = { id: "m1", title: "Alfa – Beta", seasonId: "2026", ageGroup: "2015", stage: "league", round: "1", kickoff: "2026-03-21T13:00:00+01:00", venue: "SC Trnovčica", status: "scheduled", visibility: "public", homeTeam: { id: "a", name: "Alfa", ageGroups: ["2015"], active: true }, awayTeam: { id: "b", name: "Beta", ageGroups: ["2015", "2016"], active: true } };
 const played: Match = { ...scheduled, id: "m2", ageGroup: "2016", status: "played", homeScore: 3, awayScore: 1 };
 
 describe("matchday components", () => {
@@ -71,10 +71,12 @@ describe("matchday components", () => {
   it("maps the updated announcements to their intended visual and contact route", () => {
     expect(announcements.find(({ id }) => id === "skradin-2026")).toMatchObject({ image: "/images/Kup-grada-Skradina-2026.jpeg", cta: { href: "/kontakt" } });
     expect(announcements.find(({ id }) => id === "league-registration-2026")).toMatchObject({ image: "/images/Naslovna-fotka-2.jpg", cta: { href: "/kontakt" } });
-    expect(announcements.find(({ id }) => id === "trnovcica-proljece")?.image).toBe("/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg");
+    expect(announcements.find(({ id }) => id === "trnovcica-proljece")).toBeUndefined();
   });
 
-  it("offers every age group from 2015 through 2020", () => {
-    expect(ageGroups.map(({ year }) => year)).toEqual(["2015", "2016", "2017", "2018", "2019", "2020"]);
+  it("shows the designed empty state without empty filters", () => {
+    render(<ScheduleView matches={[]} />);
+    expect(screen.getByRole("status")).toHaveTextContent("Raspored još nije objavljen.");
+    expect(screen.queryByLabelText("Filtriraj raspored po uzrastu")).not.toBeInTheDocument();
   });
 });

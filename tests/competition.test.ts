@@ -2,10 +2,10 @@ import { describe, expect, it } from "vitest";
 import { aggregateScorers, calculateStandings } from "@/lib/competition";
 import type { Match, Team } from "@/lib/types";
 
-const a: Team = { id: "a", name: "Alfa" };
-const b: Team = { id: "b", name: "Beta" };
-const c: Team = { id: "c", name: "Cedar" };
-const game = (id: string, homeTeam: Team, awayTeam: Team, homeScore?: number, awayScore?: number, status: Match["status"] = "played", stage: Match["stage"] = "league"): Match => ({ id, ageGroup: "2015", stage, round: "1", kickoff: "2026-03-01T10:00:00+01:00", venue: "Test", status, homeTeam, awayTeam, homeScore, awayScore });
+const a: Team = { id: "a", name: "Alfa", ageGroups: ["2015"], active: true };
+const b: Team = { id: "b", name: "Beta", ageGroups: ["2015"], active: true };
+const c: Team = { id: "c", name: "Cedar", ageGroups: ["2015"], active: true };
+const game = (id: string, homeTeam: Team, awayTeam: Team, homeScore?: number, awayScore?: number, status: Match["status"] = "played", stage: Match["stage"] = "league"): Match => ({ id, title: `Utakmica ${id}`, seasonId: "2026", ageGroup: "2015", stage, round: "1", kickoff: "2026-03-01T10:00:00+01:00", venue: "Test", status, visibility: "public", homeTeam, awayTeam, homeScore, awayScore });
 
 describe("calculateStandings", () => {
   it("calculates wins, draws, losses, goals and points", () => {

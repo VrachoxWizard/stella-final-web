@@ -18,6 +18,18 @@ test("main navigation works on mobile", async ({ page }) => {
   if (await button.isVisible()) { await button.click(); await expect(page.getByRole("navigation", { name: "Mobilna navigacija" })).toBeVisible(); }
 });
 
+test("header remains visible at the top of the site", async ({ page }) => {
+  await page.goto("/");
+  await expect(page.locator(".site-header")).toBeVisible();
+  await expect(page.getByRole("navigation", { name: "Glavna navigacija" }).or(page.getByRole("button", { name: "Otvori izbornik" }))).toBeVisible();
+});
+
+test("TinaCMS admin is built at /admin", async ({ page }) => {
+  await page.goto("/admin");
+  await expect(page).toHaveURL(/\/admin\/index\.html$/);
+  await expect(page).toHaveTitle("TinaCMS");
+});
+
 test("homepage has no serious automatic accessibility violations", async ({ page }) => {
   await page.goto("/");
   const results = await new AxeBuilder({ page }).analyze();
@@ -63,11 +75,26 @@ test("homepage renders the new announcements in the requested order without the 
   await expect(page.locator('img[src*="WhatsApp-Image-2026-02-09-at-20.58.08.jpeg"]').first()).toBeAttached();
   await expect(page.getByAltText(/Poliklinika Ribnjak/i)).toHaveCount(0);
   await expect(page.locator(".announcement-feature")).toHaveCount(2);
+  await expect(page.locator(".community-feature")).toHaveCount(0);
+  await expect(page.getByText("Proljetna liga u DSR Trnovčica")).toHaveCount(0);
   await expect(page.locator(".announcement-feature").nth(0).locator('a[href="/kontakt"]')).toHaveCount(2);
   await expect(page.locator(".announcement-feature").nth(1).locator('a[href="/kontakt"]')).toHaveCount(2);
 
   const blockTops = await page.locator("#aktualno, #kup-skradina, #skradin-galerija, #raspored, #uzrasti, .matchday-film").evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().top + window.scrollY));
   expect(blockTops).toEqual([...blockTops].sort((a, b) => a - b));
+});
+
+test("competition pages show an empty schedule without filters, tables or scorers", async ({ page }) => {
+  for (const route of ["/", "/raspored", "/uzrasti/2015"]) {
+    await page.goto(route);
+    await expect(page.getByText("Raspored još nije objavljen.").first()).toBeVisible();
+  }
+  await page.goto("/raspored");
+  await expect(page.locator(".schedule-controls")).toHaveCount(0);
+  await page.goto("/uzrasti/2015");
+  await expect(page.getByRole("tablist")).toHaveCount(0);
+  await expect(page.locator(".standings-table")).toHaveCount(0);
+  await expect(page.locator(".scorers-list")).toHaveCount(0);
 });
 
 test("gallery lightbox supports arrow navigation, Escape and focus restoration", async ({ page }) => {
@@ -84,7 +111,7 @@ test("gallery lightbox supports arrow navigation, Escape and focus restoration",
   await expect(firstImage).toBeFocused();
 });
 
-for (const [legacy, current] of [["/raspored-utakmica/", "/raspored"], ["/uzrast-2015/", "/uzrasti/2015"], ["/uzrast-2016/", "/uzrasti/2016"], ["/uzrast-2017/", "/uzrasti/2017"], ["/uzrast-2019/", "/uzrasti/2019"], ["/kontrakt/", "/kontakt"]]) {
+for (const [legacy, current] of [["/raspored-utakmica/", "/raspored"], ["/uzrast-2015/", "/uzrasti/2015"], ["/uzrast-2016/", "/uzrasti/2016"], ["/uzrast-2017/", "/uzrasti/2017"], ["/uzrast-2011-2012/", "/uzrasti/2018"], ["/uzrast-2019/", "/uzrasti/2019"], ["/kontrakt/", "/kontakt"], ["/studio/", "/admin"]]) {
   test(`${legacy} redirects permanently`, async ({ request }) => {
     const response = await request.get(legacy, { maxRedirects: 0 });
     expect([301, 308]).toContain(response.status());

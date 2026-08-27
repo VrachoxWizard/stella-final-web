@@ -1,10 +1,42 @@
 export type Stage = "league" | "playoff" | "playout";
 export type MatchStatus = "scheduled" | "played" | "postponed" | "cancelled";
+export type Visibility = "draft" | "public";
+
+export type PointRules = { win: number; draw: number; loss: number };
+
+export type Season = {
+  id: string;
+  name: string;
+  startDate: string;
+  endDate: string;
+  active: boolean;
+  points: PointRules;
+};
+
+export type AgeGroup = {
+  id: string;
+  year: string;
+  title: string;
+  description: string;
+  sortOrder: number;
+  active: boolean;
+};
 
 export type Team = {
   id: string;
   name: string;
   shortName?: string;
+  crest?: string;
+  ageGroups: string[];
+  active: boolean;
+};
+
+export type Player = {
+  id: string;
+  displayName: string;
+  teamId: string;
+  ageGroup: string;
+  active: boolean;
 };
 
 export type ScorerEntry = {
@@ -16,12 +48,15 @@ export type ScorerEntry = {
 
 export type Match = {
   id: string;
+  title: string;
+  seasonId: string;
   ageGroup: string;
   stage: Stage;
   round: string;
   kickoff: string;
   venue: string;
   status: MatchStatus;
+  visibility: Visibility;
   homeTeam: Team;
   awayTeam: Team;
   homeScore?: number;
@@ -46,12 +81,6 @@ export type ScorerTotal = {
   playerName: string;
   team: Team;
   goals: number;
-};
-
-export type AgeGroup = {
-  year: string;
-  title: string;
-  description: string;
 };
 
 export type Announcement = {
@@ -80,4 +109,12 @@ export type Sponsor = {
   alt: string;
   description: string;
   url?: string;
+};
+
+export type CompetitionData = {
+  seasons: Season[];
+  ageGroups: AgeGroup[];
+  teams: Team[];
+  players: Player[];
+  matches: Match[];
 };

@@ -1,6 +1,4 @@
-import type { Match, ScorerTotal, StandingRow, Team } from "@/lib/types";
-
-export type PointRules = { win: number; draw: number; loss: number };
+import type { Match, PointRules, ScorerTotal, StandingRow, Team } from "@/lib/types";
 
 const DEFAULT_POINTS: PointRules = { win: 3, draw: 1, loss: 0 };
 

@@ -1,35 +1,40 @@
 # Tina Šport–Pia
 
-Moderni React/Next.js nasljednik postojeće WordPress stranice. Dizajn prati odobreni **Cinematic editorial matchday** smjer, a javni dio radi i bez CMS pristupa koristeći provjereni lokalni sadržaj.
+Next.js 16 web za Malonogometnu ligu Tina Šport–Pia. Natjecateljski sadržaj uređuje se kroz TinaCMS, sprema kao JSON u ovaj GitHub repozitorij i ulazi u javni web tek tijekom uspješnog Vercel builda.
 
-## Pokretanje
+## Lokalno pokretanje
 
 ```bash
 npm install
 npm run dev
 ```
 
-Otvorite `http://localhost:3000`. Administracija sadržaja dostupna je na `/studio` nakon povezivanja Sanity projekta.
+- web: `http://localhost:3000`
+- TinaCMS: `http://localhost:3000/admin`
 
-## Okruženje
+U lokalnom načinu Tina radi nad datotekama u `content/competition`. Za uređivanje na objavljenom webu potrebno je povezati TinaCloud projekt.
 
-Kopirajte `.env.example` u `.env.local` i unesite:
+## Varijable okruženja
 
-- `NEXT_PUBLIC_SANITY_PROJECT_ID` i `NEXT_PUBLIC_SANITY_DATASET`
-- `SANITY_API_READ_TOKEN` za sigurni pregled nacrta na poslužitelju
-- `SANITY_REVALIDATE_SECRET` za preview i publication webhook
-- `NEXT_PUBLIC_FORMSPREE_FORM_ID` za isporuku kontaktnih poruka
-- `NEXT_PUBLIC_SITE_URL` za kanonske URL-ove
+Kopirajte `.env.example` u `.env.local` i postavite:
 
-Bez ovih vrijednosti stranica koristi lokalni sadržaj i ne šalje obrazac vanjskom servisu.
+- `NEXT_PUBLIC_TINA_CLIENT_ID` — ID TinaCloud projekta
+- `TINA_TOKEN` — read-only token, samo u lokalnom/Vercel okruženju
+- `NEXT_PUBLIC_TINA_BRANCH` — zadano `main`
+- `NEXT_PUBLIC_FORMSPREE_FORM_ID` — isporuka kontaktnih poruka
+- `NEXT_PUBLIC_SITE_URL` — kanonska adresa, `https://mnk-tinasport.hr`
 
-## Sanity
+Pristupni podaci i tokeni ne smiju se commitati.
 
-1. Kreirajte Sanity projekt i dataset `production`.
-2. Unesite varijable okruženja.
-3. Pokrenite `npm run sanity:seed` za unos postavki, sezone, uzrasta, momčadi, igrača, utakmica, objava i galerije.
-4. U Sanity webhooku postavite `POST /api/revalidate` i zaglavlje `x-sanity-secret`.
-5. Draft pregled uključuje se kroz `/api/draft/enable?secret=...&redirect=/...`.
+## CMS sadržaj
+
+- `content/competition/seasons`
+- `content/competition/age-groups`
+- `content/competition/teams`
+- `content/competition/players`
+- `content/competition/matches`
+
+Utakmice imaju vidljivost `draft` ili `public`. Javni web prikazuje samo javne utakmice aktivne sezone, aktivnih uzrasta i aktivnih klubova. Cjelovita validacija odnosa izvršava se tijekom builda; neispravni dokument zaustavlja novi deployment.
 
 ## Provjera
 
@@ -37,12 +42,12 @@ Bez ovih vrijednosti stranica koristi lokalni sadržaj i ne šalje obrazac vanjs
 npm run typecheck
 npm run lint
 npm test
-npm run e2e
 npm run build
+npm run e2e
 ```
 
-End-to-end provjera pokriva sve javne rute i trajna preusmjerenja na mobilnom, tablet i desktop prikazu. Testovi uključuju automatsku provjeru ozbiljnih problema pristupačnosti i horizontalnog preljeva.
+Build naredba je `tinacms build && next build`. Generirani `tina/tina-lock.json` mora ostati u repozitoriju.
 
-## Objavljivanje
+## Objava
 
-Projekt je spreman za Vercel. Prije produkcijskog prebacivanja domene potrebno je u Vercelu unijeti sve varijable okruženja, provjeriti Formspree isporuku, uvesti odobreni Sanity sadržaj i potvrditi završni tekst privatnosti. Stari WordPress host treba ostati dostupan tijekom početnog razdoblja nakon prebacivanja.
+Vercel projekt koristi Next.js preset, `npm install`, `npm run build` i granu `main`. Postojeći WordPress ostaje na TotoHostu kao arhiva i medijski origin; detaljan redoslijed prijelaza nalazi se u [docs/migration-runbook.md](docs/migration-runbook.md).
