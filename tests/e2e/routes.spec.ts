@@ -1,7 +1,7 @@
 import AxeBuilder from "@axe-core/playwright";
 import { expect, test } from "@playwright/test";
 
-const routes = ["/", "/raspored", "/uzrasti/2015", "/uzrasti/2016", "/uzrasti/2017", "/uzrasti/2019", "/galerija", "/o-nama", "/kontakt", "/privatnost"];
+const routes = ["/", "/raspored", "/uzrasti/2015", "/uzrasti/2016", "/uzrasti/2017", "/uzrasti/2018", "/uzrasti/2019", "/uzrasti/2020", "/galerija", "/o-nama", "/kontakt", "/privatnost"];
 
 for (const route of routes) {
   test(`${route} renders without horizontal overflow`, async ({ page }) => {
@@ -24,13 +24,13 @@ test("homepage has no serious automatic accessibility violations", async ({ page
   expect(results.violations.filter((violation) => ["serious", "critical"].includes(violation.impact ?? ""))).toEqual([]);
 });
 
-test("mobile hero keeps its photography, introduction and match ticket visible", async ({ page }) => {
+test("mobile hero keeps its photography and introduction without the old match ticket", async ({ page }) => {
   await page.setViewportSize({ width: 390, height: 844 });
   await page.goto("/");
 
   await expect(page.locator(".hero-media img")).toBeVisible();
   await expect(page.locator(".hero-copy > p")).toBeVisible();
-  await expect(page.locator(".hero-ticket")).toBeVisible();
+  await expect(page.locator(".hero-ticket")).toHaveCount(0);
 });
 
 test("active navigation identifies the current page", async ({ page }) => {
@@ -38,12 +38,12 @@ test("active navigation identifies the current page", async ({ page }) => {
   await expect(page.locator('[aria-label="Glavna navigacija"] a[href="/galerija"]')).toHaveAttribute("aria-current", "page");
 });
 
-test("reduced motion removes decorative transitions and ticker movement", async ({ page }) => {
+test("reduced motion removes decorative transitions and the old ticker is absent", async ({ page }) => {
   await page.emulateMedia({ reducedMotion: "reduce" });
   await page.goto("/");
 
   await expect(page.locator(".reveal").first()).toHaveCSS("opacity", "1");
-  await expect(page.locator(".ticker-track")).toHaveCSS("animation-name", "none");
+  await expect(page.locator(".ticker-track")).toHaveCount(0);
 });
 
 test("original film is requested only after an explicit play action", async ({ page }) => {
@@ -56,13 +56,18 @@ test("original film is requested only after an explicit play action", async ({ p
   await expect(video).toHaveAttribute("controls", "");
 });
 
-test("homepage renders the correct announcement and sponsor assets", async ({ page }) => {
+test("homepage renders the new announcements in the requested order without the old sponsor", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.locator('img[src*="WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg"]').first()).toBeAttached();
-  await expect(page.locator('img[src*="Kup-grada-Skradina-poster.png"]').first()).toBeAttached();
+  await expect(page.locator('img[src*="Kup-grada-Skradina-2026.jpeg"]').first()).toBeAttached();
   await expect(page.locator('img[src*="WhatsApp-Image-2026-02-09-at-20.58.08.jpeg"]').first()).toBeAttached();
-  await expect(page.getByAltText(/Poliklinika Ribnjak, službeni sponzor/i)).toBeAttached();
+  await expect(page.getByAltText(/Poliklinika Ribnjak/i)).toHaveCount(0);
+  await expect(page.locator(".announcement-feature")).toHaveCount(2);
+  await expect(page.locator(".announcement-feature").nth(0).locator('a[href="/kontakt"]')).toHaveCount(2);
+  await expect(page.locator(".announcement-feature").nth(1).locator('a[href="/kontakt"]')).toHaveCount(2);
+
+  const blockTops = await page.locator("#aktualno, #kup-skradina, #skradin-galerija, #raspored, #uzrasti, .matchday-film").evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().top + window.scrollY));
+  expect(blockTops).toEqual([...blockTops].sort((a, b) => a - b));
 });
 
 test("gallery lightbox supports arrow navigation, Escape and focus restoration", async ({ page }) => {

@@ -4,7 +4,7 @@ import { GalleryGrid } from "@/components/gallery-grid";
 import { MatchCard } from "@/components/match-card";
 import { MatchdayFilm } from "@/components/matchday-film";
 import { ScheduleView } from "@/components/schedule-view";
-import { announcements, sponsorFallback } from "@/lib/data";
+import { ageGroups, announcements } from "@/lib/data";
 import type { Match } from "@/lib/types";
 
 vi.mock("next/image", () => ({ default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
@@ -68,19 +68,13 @@ describe("matchday components", () => {
     expect(container.querySelector("video")).toHaveAttribute("controls");
   });
 
-  it("keeps the supplied sponsor artwork as the guaranteed local fallback", () => {
-    expect(sponsorFallback).toMatchObject({
-      name: "Poliklinika Ribnjak",
-      image: "/images/DOC-20240309-WA0010_240729_164917_page-00012-scaled.jpg",
-      width: 2560,
-      height: 853,
-    });
-    expect(sponsorFallback.url).toBeUndefined();
+  it("maps the updated announcements to their intended visual and contact route", () => {
+    expect(announcements.find(({ id }) => id === "skradin-2026")).toMatchObject({ image: "/images/Kup-grada-Skradina-2026.jpeg", cta: { href: "/kontakt" } });
+    expect(announcements.find(({ id }) => id === "league-registration-2026")).toMatchObject({ image: "/images/Naslovna-fotka-2.jpg", cta: { href: "/kontakt" } });
+    expect(announcements.find(({ id }) => id === "trnovcica-proljece")?.image).toBe("/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg");
   });
 
-  it("maps each announcement to the correct supplied WordPress image", () => {
-    expect(announcements.find(({ id }) => id === "skradin-2026")?.image).toBe("/images/WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg");
-    expect(announcements.find(({ id }) => id === "rastane-2026")?.image).toBe("/images/Kup-grada-Skradina-poster.png");
-    expect(announcements.find(({ id }) => id === "trnovcica-proljece")?.image).toBe("/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg");
+  it("offers every age group from 2015 through 2020", () => {
+    expect(ageGroups.map(({ year }) => year)).toEqual(["2015", "2016", "2017", "2018", "2019", "2020"]);
   });
 });

@@ -2,9 +2,9 @@
 
 ## Product and fidelity
 
-Tina Šport–Pia is a Croatian youth futsal league founded in 1992. The redesign is a modern cinematic reinterpretation of the still-running WordPress site, not a generic sports template and not a literal Divi reconstruction. It must remain unmistakably Tina Šport–Pia through the real crest, navy/red identity, original match photography, actual Poliklinika Ribnjak sponsor artwork, Croatian content, and the legacy information sequence.
+Tina Šport–Pia is a Croatian youth futsal league founded in 1992. The redesign is a modern cinematic reinterpretation of the still-running WordPress site, not a generic sports template and not a literal Divi reconstruction. It must remain unmistakably Tina Šport–Pia through the real crest, navy/red identity, original match photography, Croatian content, and the legacy information sequence. The Poliklinika Ribnjak advertisement is no longer part of the site.
 
-The public jobs are checking the next match, finding a schedule, switching among 2015/2016/2017/2019, reading results/standings/scorers, seeing announcements, watching the league film by choice, browsing photographs, and contacting the organizer.
+The public jobs are immediately seeing current announcements, checking the match schedule, switching among 2015/2016/2017/2018/2019/2020, reading results/standings/scorers, watching the league film by choice, browsing photographs, and contacting the organizer.
 
 ## Approved exploration directions
 
@@ -53,8 +53,8 @@ Use real supplied assets, never redrawn substitutes:
 
 - Crest: `Tina-logo-cisti.png` — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d87b1be5-11e3-48b6-bf9d-a561180ddaad.png`
 - Homepage hero: `Naslovna-fotka-2.jpg`, documentary football crop visible on desktop and mobile — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/9e9cca81-883c-4593-8486-0b22c271bbf7/external-assets/013e225c-df6c-455d-9483-2bdf8a11350c-Naslovna-fotka-2.jpg`
-- Raštane Cup poster: `WhatsApp-Image-2026-03-12-at-09.34.13.jpeg` — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/d454e71d-50bf-44fe-9752-4c36f4fff9df.jpg`
-- Raštane supporting mosaic: use only the following six real resort/accommodation photographs; do not substitute the DSR image, hero, film poster, sponsor, crest, or stadium image:
+- New Kup grada Skradina poster: attached `image-1.jpeg` — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/9e9cca81-883c-4593-8486-0b22c271bbf7/content-assets/fe18efdb018f7d899f7d69089876e2f7297468ad1a3486652dcaf2fd2fdfda2f/image-1.jpeg`
+- Skradin supporting gallery: use only the following six real resort/accommodation photographs; do not substitute the DSR image, hero, film poster, crest, or stadium image:
   - Pool/resort aerial: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/3639a478-5253-44c1-8e3a-b665be80b32c.jpg`
   - Pool complex at dusk: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/9d9bab5e-8271-40bf-a978-2facfafc9590.jpg`
   - Hotel room with blue accents: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/9ffee81c-bc0f-4fa0-b708-6db09dd8b21c.jpg`
@@ -62,22 +62,21 @@ Use real supplied assets, never redrawn substitutes:
   - Blue restaurant interior: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/68057a42-7de5-486f-9f71-8034e54e9e42.jpg`
   - Daytime community pool: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/c1a41105-afb0-485c-8af8-8ea2045facc4.jpg`
 - DSR Trnovčica: `WhatsApp-Image-2026-02-09-at-20.58.08.jpeg` — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/0403c22c-c20f-4375-831f-769060fa5f9d.jpg`
-- Sponsor: `DOC-20240309-WA0010_240729_164917_page-00012-scaled.jpg`, shown uncropped — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/assets/28deac43-52e1-4b55-922a-4859a83b7c01.jpg`
 - Film: `Video-by-klincek__.mp4`, 43.2 seconds, vertical 9:16, with `video-matchday-poster.jpg` fallback — poster Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/9e9cca81-883c-4593-8486-0b22c271bbf7/external-assets/845d4abc-bcbe-4a86-b4fb-9a261c1ca34b-video-matchday-poster.jpg`
 - Photographic footer: `pexels-pixabay-262524.jpg` with restrained navy overlay — Superdesign URL: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/projects/9e9cca81-883c-4593-8486-0b22c271bbf7/external-assets/1ad1556f-8484-4fe3-9ba2-cf8ed2d51cf6-pexels-pixabay-262524.jpg`
 - Live WordPress screenshot reference: `https://vgbujcuwptvheqijyjbe.supabase.co/storage/v1/object/public/hmac-uploads/brand/f1bb4562-c133-48d9-aec3-30617888f49f/screenshot.png`
 
 ## Homepage architecture
 
-1. Sticky compact header: real crest, current-route state, direct accessible age submenu, schedule CTA, mobile navigation.
-2. Hero: `Naslovna-fotka-2.jpg`, league identity and intro, schedule/results CTAs, compact featured-match ticket, subtle optional crest watermark.
-3. Continuous existing ticker, then a polished next-match rail.
-4. Age-group navigator for 2015/2016/2017/2019.
-5. Large poster-led user-controlled film experience.
-6. Raštane Cup story with correct poster and supporting editorial mosaic.
-7. Actual uncropped Poliklinika Ribnjak sponsor artwork and sponsor copy.
-8. DSR Trnovčica notice with the correct evening football image.
-9. Cinematic gallery preview.
+1. Sticky compact header: real crest, current-route state, direct accessible age submenu for 2015–2020, schedule CTA, mobile navigation.
+2. Shorter hero: `Naslovna-fotka-2.jpg`, league identity and intro, schedule/results CTAs, no featured-match ticket; the first Aktualno section should already peek into the initial viewport.
+3. Aktualno: “Prijave za Malonogometnu ligu” with the supplied Croatian registration copy. Until the separate official league poster is supplied, use existing league photography as a clearly temporary editorial visual. Its e-mail/contact action links to `/kontakt`.
+4. Aktualno: “Kup grada Skradina” with the new exact attached poster, the supplied Croatian copy, and a contact action linking to `/kontakt`.
+5. Dedicated Kup grada Skradina photo gallery using the existing Skradin gallery images.
+6. “Raspored utakmica” section (replacing “Sljedeće na rasporedu”) with schedule link.
+7. Age-group navigator for every year from 2015 through 2020.
+8. Large poster-led, user-controlled night film experience.
+9. Existing lower community and general gallery content, with the Poliklinika Ribnjak advertisement omitted entirely.
 10. Contact-rich photographic stadium footer.
 
 ## Motion and interaction

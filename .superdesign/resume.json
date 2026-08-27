@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 1,
+  "targets": {
+    "/": {
+      "targetKind": "existing-ui",
+      "projectId": "9e9cca81-883c-4593-8486-0b22c271bbf7",
+      "baselineDraftId": "70e263f0-f6ff-4f42-a9f2-92fb57a79cb6",
+      "activeDraftId": "3ad5e7c2-774c-4580-a52f-73811213dc40",
+      "designSystemPath": ".superdesign/design-system.md",
+      "referenceIds": [
+        "cb379d04-c43a-427d-b0fd-bf6475fd207c"
+      ],
+      "contextFiles": [
+        ".superdesign/design-system.md",
+        "src/app/page.tsx",
+        "src/app/layout.tsx",
+        "src/components/site-header.tsx",
+        "src/components/site-footer.tsx",
+        "src/components/age-navigation.tsx",
+        "src/components/match-card.tsx",
+        "src/components/matchday-film.tsx",
+        "src/components/section-heading.tsx",
+        "src/lib/data.ts",
+        "src/app/globals.css:1:205",
+        "src/app/globals.css:318:492",
+        "src/app/globals.css:514:681"
+      ],
+      "fingerprints": {
+        ".superdesign/design-system.md": "da4cec701d18d7a9bf3ce66dcd14f9e4ea8d2c7ecce44e8e3a4402871a73f162",
+        "src/app/page.tsx": "47872d111fa725d73830acf155f686fc98674fd035f04f66ff9bf4cacc27deaf",
+        "src/app/layout.tsx": "4795de20b05f0efe021644d3ce2d36ed66e6764b73821730834cf643903706d1",
+        "src/components/site-header.tsx": "f7b42f0f92b598165af969826f5ddf1261a88bf74485909c345578c8b91757f1",
+        "src/components/site-footer.tsx": "60d0fee752875f2fca99e7234928c3200ce717d449ab0b69627048ff0bc59b96",
+        "src/components/age-navigation.tsx": "5f72e8c8c34463c56382fe9d8b495836617e38b37635df1638e90a221a91a34a",
+        "src/components/match-card.tsx": "aaf6bd452798d767f2c02e193d1d85e07c9a5d157dda170566299d6df4d18d54",
+        "src/components/matchday-film.tsx": "92d60f16489a94c1644bd5a6d9ac7c88ff6ebdb81cad5726e08ea1b6346c9f7e",
+        "src/components/section-heading.tsx": "54084effa74b8165cc0fca12dbbb5dbd72e332b6d575e98f5145b11d1f1a3c01",
+        "src/lib/data.ts": "7291cee92f691e7f3c627e69ed4fe9bb04dc3b88bc0349cd530eefae7c7434c7",
+        "src/app/globals.css": "4e1e6a0be42d92f0a293f5529e8d92bf961afd7fd8ee1bf0c7dce8cef2314b4b"
+      },
+      "components": [
+        {
+          "name": "SiteHeader",
+          "id": "ff915ef4-f3e0-4887-b224-9f1311907657",
+          "sourcePath": "src/components/site-header.tsx"
+        },
+        {
+          "name": "SiteFooter",
+          "id": "405060f0-360b-4df5-bca5-1da50cdc844a",
+          "sourcePath": "src/components/site-footer.tsx"
+        }
+      ],
+      "drafts": {
+        "3ad5e7c2-774c-4580-a52f-73811213dc40": {
+          "title": "Tina Šport–Pia | Refined Modern Legacy Cinema",
+          "visualDirection": "Modern Legacy Cinema updated to the August 2026 homepage block order",
+          "parentDraftId": "70e263f0-f6ff-4f42-a9f2-92fb57a79cb6",
+          "currentVersion": 3
+        }
+      },
+      "updatedAt": "2026-08-27T18:39:02.3318679+02:00"
+    }
+  }
+}
