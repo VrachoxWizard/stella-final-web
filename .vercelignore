@@ -11,3 +11,7 @@ coverage
 /images
 /media
 /index.html
+kup-skradin-novo/
+output/
+tmp/
+tsconfig.tsbuildinfo

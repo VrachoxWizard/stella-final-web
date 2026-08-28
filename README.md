@@ -21,8 +21,9 @@ Kopirajte `.env.example` u `.env.local` i postavite:
 - `NEXT_PUBLIC_TINA_CLIENT_ID` — ID TinaCloud projekta
 - `TINA_TOKEN` — read-only token, samo u lokalnom/Vercel okruženju
 - `NEXT_PUBLIC_TINA_BRANCH` — zadano `main`
-- `NEXT_PUBLIC_FORMSPREE_FORM_ID` — isporuka kontaktnih poruka
 - `NEXT_PUBLIC_SITE_URL` — kanonska adresa, `https://mnk-tinasport.hr`
+
+Kontaktni obrazac privremeno nije uključen; posjetitelji se javljaju izravno e-mailom ili telefonom. Integracija obrasca može se dodati naknadno.
 
 Pristupni podaci i tokeni ne smiju se commitati.
 
