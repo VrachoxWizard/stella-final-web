@@ -88,7 +88,7 @@ export type Announcement = {
   type: "news" | "tournament" | "notice";
   title: string;
   excerpt: string;
-  image: string;
+  image?: string;
   date: string;
   cta?: { label: string; href: string };
 };

@@ -58,20 +58,10 @@ test("reduced motion removes decorative transitions and the old ticker is absent
   await expect(page.locator(".ticker-track")).toHaveCount(0);
 });
 
-test("original film is requested only after an explicit play action", async ({ page }) => {
-  await page.goto("/");
-  const video = page.locator(".matchday-film video");
-  await expect(video.locator("source")).toHaveCount(0);
-
-  await page.getByRole("button", { name: /pokreni video atmosfere/i }).click();
-  await expect(video.locator("source")).toHaveCount(1);
-  await expect(video).toHaveAttribute("controls", "");
-});
-
 test("homepage renders the new announcements in the requested order without the old sponsor", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.locator('img[src*="Kup-grada-Skradina-2026.jpeg"]').first()).toBeAttached();
+  await expect(page.locator(".announcement-poster--placeholder")).toBeVisible();
   await expect(page.locator('img[src*="WhatsApp-Image-2026-02-09-at-20.58.08.jpeg"]').first()).toBeAttached();
   await expect(page.getByAltText(/Poliklinika Ribnjak/i)).toHaveCount(0);
   await expect(page.locator(".announcement-feature")).toHaveCount(2);
@@ -80,7 +70,9 @@ test("homepage renders the new announcements in the requested order without the 
   await expect(page.locator(".announcement-feature").nth(0).locator('a[href="/kontakt"]')).toHaveCount(2);
   await expect(page.locator(".announcement-feature").nth(1).locator('a[href="/kontakt"]')).toHaveCount(2);
 
-  const blockTops = await page.locator("#aktualno, #kup-skradina, #skradin-galerija, #raspored, #uzrasti, .matchday-film").evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().top + window.scrollY));
+  await expect(page.locator("video")).toHaveCount(0);
+  await expect(page.getByText("26. 9. 2026.")).toBeVisible();
+  const blockTops = await page.locator("#aktualno, #kup-skradina, #skradin-galerija, #raspored, #uzrasti").evaluateAll((elements) => elements.map((element) => element.getBoundingClientRect().top + window.scrollY));
   expect(blockTops).toEqual([...blockTops].sort((a, b) => a - b));
 });
 

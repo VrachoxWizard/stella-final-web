@@ -27,9 +27,8 @@ export const metadata: Metadata = {
     siteName: site.name,
     title: `${site.name} | Liga koja odgaja igrače`,
     description: site.description,
-    images: [{ url: "/images/Naslovna-fotka-2.jpg", width: 1920, height: 1080, alt: "Mladi nogometaši Tina Šport–Pia lige" }],
   },
-  twitter: { card: "summary_large_image", title: site.name, description: site.description, images: ["/images/Naslovna-fotka-2.jpg"] },
+  twitter: { card: "summary", title: site.name, description: site.description },
 };
 
 export const viewport: Viewport = {

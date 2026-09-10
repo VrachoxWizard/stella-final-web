@@ -2,7 +2,6 @@ import { fireEvent, render, screen, waitFor } from "@testing-library/react";
 import { describe, expect, it, vi } from "vitest";
 import { GalleryGrid } from "@/components/gallery-grid";
 import { MatchCard } from "@/components/match-card";
-import { MatchdayFilm } from "@/components/matchday-film";
 import { ScheduleView } from "@/components/schedule-view";
 import { announcements } from "@/lib/data";
 import type { Match } from "@/lib/types";
@@ -52,25 +51,10 @@ describe("matchday components", () => {
     await waitFor(() => expect(opener).toHaveFocus());
   });
 
-  it("does not request the film until the visitor presses play", async () => {
-    vi.spyOn(HTMLMediaElement.prototype, "load").mockImplementation(() => undefined);
-    vi.spyOn(HTMLMediaElement.prototype, "play").mockImplementation(function play(this: HTMLMediaElement) {
-      this.dispatchEvent(new Event("play"));
-      return Promise.resolve();
-    });
-
-    const { container } = render(<MatchdayFilm />);
-    expect(container.querySelector("video source")).not.toBeInTheDocument();
-    expect(container.querySelector("video")).not.toHaveAttribute("controls");
-
-    fireEvent.click(screen.getByRole("button", { name: /pokreni video atmosfere/i }));
-    await waitFor(() => expect(container.querySelector("video source")).toHaveAttribute("src", "/media/Video-by-klincek__.mp4"));
-    expect(container.querySelector("video")).toHaveAttribute("controls");
-  });
-
-  it("maps the updated announcements to their intended visual and contact route", () => {
-    expect(announcements.find(({ id }) => id === "skradin-2026")).toMatchObject({ image: "/images/Kup-grada-Skradina-2026.jpeg", cta: { href: "/kontakt" } });
-    expect(announcements.find(({ id }) => id === "league-registration-2026")).toMatchObject({ image: "/images/Naslovna-fotka-2.jpg", cta: { href: "/kontakt" } });
+  it("maps the updated announcements without removed media", () => {
+    expect(announcements.find(({ id }) => id === "skradin-2026")).toMatchObject({ cta: { href: "/kontakt" } });
+    expect(announcements.find(({ id }) => id === "league-registration-2026")).toMatchObject({ date: "2026-09-26", cta: { href: "/kontakt" } });
+    expect(announcements.every(({ image }) => image === undefined)).toBe(true);
     expect(announcements.find(({ id }) => id === "trnovcica-proljece")).toBeUndefined();
   });
 

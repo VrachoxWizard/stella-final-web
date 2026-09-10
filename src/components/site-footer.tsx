@@ -7,7 +7,7 @@ import type { AgeGroup } from "@/lib/types";
 export function SiteFooter({ ageGroups }: { ageGroups: AgeGroup[] }) {
   return (
     <footer className="site-footer">
-      <div className="footer-media" aria-hidden="true"><Image src="/images/pexels-pixabay-262524.jpg" alt="" fill sizes="100vw" /></div>
+      <div className="footer-media footer-media--placeholder" aria-hidden="true" />
       <div className="shell footer-grid">
         <div className="footer-brand">
           <Image src="/images/Tina-logo-cisti.png" width={88} height={88} alt="Grb Tina Šport–Pia" />
