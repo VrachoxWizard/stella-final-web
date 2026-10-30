@@ -1,13 +1,18 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import { PageHero } from "@/components/page-hero";
-import { site } from "@/lib/data";
+import { RichText } from "@/components/rich-text";
+import { getSite } from "@/lib/content";
 
-export const metadata: Metadata = { title: "O nama", description: "Priča o Tina Šport–Pia ligi, koja od 1992. okuplja mlade nogometaše.", alternates: { canonical: "/o-nama" } };
+export async function generateMetadata(): Promise<Metadata> {
+  const { settings } = await getSite();
+  return { title: "O nama", description: `Priča o ${settings.name} ligi, koja od 1992. okuplja mlade nogometaše.`, alternates: { canonical: "/o-nama" } };
+}
 
-export default function AboutPage() {
-  return <><PageHero eyebrow="Naša priča" title="Od 1992." copy="Više od tri desetljeća prostora za igru, odrastanje i prve velike sportske uspomene." word="Srce" /><section className="section section-white"><div className="shell story-grid">
-    <aside className="story-sticky"><span className="eyebrow">Tina Šport–Pia</span><h2>Liga za više od rezultata.</h2><div className="story-media"><Image src="/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg" alt="Večernja utakmica mladih nogometaša na osvijetljenom terenu Trnovčice" fill sizes="(max-width: 760px) 100vw, 38vw" /></div><div className="organizer-note"><span>Organizator lige</span><strong>{site.organizer}</strong><small>Tina Šport–Pia · Zagreb</small></div></aside>
-    <article className="story-copy"><p>Malonogometna liga Tina Šport–Pia traje još od proljeća 1992. godine. Organizirana je za nogometne škole i malonogometne klubove, s jednostavnom idejom: djeci dati sigurno mjesto za igru, natjecanje i razvoj.</p><p>Sport djeci pomaže graditi samopouzdanje, disciplinu i osjećaj pripadnosti. Kroz više od trideset godina našim je terenima prošao velik broj malih nogometaša — svaki sa svojim prvim golom, ekipom i pričom.</p><blockquote className="quote">“Sva djeca trebaju malo pomoći, malo nade i nekoga tko vjeruje u njih.”</blockquote><p>A mi vjerujemo u naše malonogometaše. Zato svaku sezonu nastojimo učiniti preglednom za roditelje, uzbudljivom za igrače i fer za sve ekipe.</p><div className="values-grid"><div className="value-card"><span>01</span><h3>Razvoj</h3><p>Učenje kroz igru, trening i sportsko ponašanje.</p></div><div className="value-card"><span>02</span><h3>Zajedništvo</h3><p>Prijateljstva i osjećaj ekipe koji ostaju nakon utakmice.</p></div><div className="value-card"><span>03</span><h3>Fair play</h3><p>Poštovanje protivnika, sudaca, trenera i igre.</p></div></div></article>
+export default async function AboutPage() {
+  const { about, settings } = await getSite();
+  return <><PageHero eyebrow={about.hero.eyebrow} title={about.hero.title} copy={about.hero.text} word={about.hero.word} /><section className="section section-white"><div className="shell story-grid">
+    <aside className="story-sticky">{about.eyebrow && <span className="eyebrow">{about.eyebrow}</span>}<h2>{about.heading}</h2><div className="story-media"><Image src={about.image.src} alt={about.image.alt} fill sizes="(max-width: 760px) 100vw, 38vw" /></div><div className="organizer-note"><span>Organizator lige</span><strong>{settings.organizer}</strong><small>{settings.name} · Zagreb</small></div></aside>
+    <article className="story-copy"><RichText text={about.text} />{about.quote && <blockquote className="quote">“{about.quote}”</blockquote>}<RichText text={about.textAfterQuote} />{about.values.length > 0 && <div className="values-grid">{about.values.map((value, index) => <div className="value-card" key={index}><span>{String(index + 1).padStart(2, "0")}</span><h3>{value.title}</h3>{value.text && <p>{value.text}</p>}</div>)}</div>}</article>
   </div></section></>;
 }

@@ -1,0 +1,14 @@
+{
+  "hero": { "eyebrow": "Naša priča", "title": "Od 1992.", "text": "Više od tri desetljeća prostora za igru, odrastanje i prve velike sportske uspomene.", "word": "Srce" },
+  "eyebrow": "Tina Šport–Pia",
+  "heading": "Liga za više od rezultata.",
+  "image": { "src": "/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg", "alt": "Večernja utakmica mladih nogometaša na osvijetljenom terenu Trnovčice" },
+  "text": "Malonogometna liga Tina Šport–Pia traje još od proljeća 1992. godine. Organizirana je za nogometne škole i malonogometne klubove, s jednostavnom idejom: djeci dati sigurno mjesto za igru, natjecanje i razvoj.\n\nSport djeci pomaže graditi samopouzdanje, disciplinu i osjećaj pripadnosti. Kroz više od trideset godina našim je terenima prošao velik broj malih nogometaša — svaki sa svojim prvim golom, ekipom i pričom.",
+  "quote": "Sva djeca trebaju malo pomoći, malo nade i nekoga tko vjeruje u njih.",
+  "textAfterQuote": "A mi vjerujemo u naše malonogometaše. Zato svaku sezonu nastojimo učiniti preglednom za roditelje, uzbudljivom za igrače i fer za sve ekipe.",
+  "values": [
+    { "title": "Razvoj", "text": "Učenje kroz igru, trening i sportsko ponašanje." },
+    { "title": "Zajedništvo", "text": "Prijateljstva i osjećaj ekipe koji ostaju nakon utakmice." },
+    { "title": "Fair play", "text": "Poštovanje protivnika, sudaca, trenera i igre." }
+  ]
+}

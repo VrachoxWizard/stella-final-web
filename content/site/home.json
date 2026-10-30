@@ -1,0 +1,31 @@
+{
+  "hero": {
+    "eyebrow": "Malonogometna liga · Zagreb · od 1992.",
+    "title": "Igra koja",
+    "titleHighlight": "ostaje.",
+    "text": "Raspored, rezultati i priče iz lige u kojoj se ne broje samo golovi — nego prijateljstva, trud i prvi veliki sportski trenuci.",
+    "primaryButton": { "label": "Pogledaj raspored", "href": "/raspored" },
+    "secondaryButton": { "label": "Rezultati i tablice", "href": "/uzrasti/2015" }
+  },
+  "featuredGallery": {
+    "show": true,
+    "eyebrow": "Kup grada Skradina · Galerija",
+    "title": "Skradin u srcu",
+    "text": "Smještaj, zajednički trenuci i atmosfera turnira koji ekipe pamte i nakon posljednjeg zvižduka."
+  },
+  "schedule": {
+    "eyebrow": "Matchday",
+    "title": "Raspored utakmica",
+    "text": "Sve važne informacije za dolazak na utakmicu — bez traženja po tablicama i objavama."
+  },
+  "ageGroups": {
+    "eyebrow": "Generacije",
+    "title": "Pronađi svoj uzrast",
+    "text": "Rezultati, aktualni poredak, strijelci i završnica na jednom mjestu."
+  },
+  "gallery": {
+    "eyebrow": "Iza rezultata",
+    "title": "Trenuci koji se pamte",
+    "text": "Pogledajte atmosferu, ekipe i emocije koje čine Tina Šport–Pia ligu."
+  }
+}

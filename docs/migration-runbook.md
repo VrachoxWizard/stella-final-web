@@ -10,12 +10,12 @@ Prijelaz domene provodi se tek nakon uspješnog preview i produkcijskog Vercel b
 4. Provjeriti HTTPS te uzorak fotografija, svih 16 videa, PDF i ODS dokument.
 5. Ne brisati produkcijsku ni staging instalaciju.
 
-## 2. Vercel i TinaCloud
+## 2. Vercel i CMS
 
 1. Vercel preset: Next.js; bez Output Directory; Build `npm run build`; Install `npm install`; Production Branch `main`.
-2. Dodati `NEXT_PUBLIC_TINA_CLIENT_ID`, `TINA_TOKEN`, `NEXT_PUBLIC_TINA_BRANCH` i `NEXT_PUBLIC_SITE_URL` za Preview i Production. Kontaktni obrazac dodaje se naknadno.
-3. Povezati TinaCloud samo s repozitorijem `VrachoxWizard/stella-final-web` i najviše dva urednika.
-4. Potvrditi `/admin`, spremanje skice i spremanje javne testne utakmice.
+2. Dodati `ADMIN_PASSWORD`, `SESSION_SECRET`, `GITHUB_TOKEN`, `GITHUB_REPO`, `GITHUB_BRANCH` i `NEXT_PUBLIC_SITE_URL` (upute u README.md). Kontaktni obrazac dodaje se naknadno.
+3. GitHub token ograničiti samo na repozitorij `VrachoxWizard/stella-final-web` s dozvolom Contents: Read and write.
+4. Potvrditi prijavu na `/admin`, spremanje skrivene i spremanje javne testne utakmice.
 5. Najprije potvrditi preview, zatim produkcijski Vercel URL bez domene.
 
 ## 3. DNS bez prekida pošte

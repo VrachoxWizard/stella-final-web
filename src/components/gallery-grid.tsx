@@ -5,7 +5,7 @@ import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { useCallback, useEffect, useRef, useState } from "react";
 import type { GalleryImage } from "@/lib/types";
 
-export function GalleryGrid({ images }: { images: GalleryImage[] }) {
+export function GalleryGrid({ images }: { images: Pick<GalleryImage, "id" | "src" | "alt" | "width" | "height">[] }) {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);

@@ -1,9 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import "@/app/globals.css";
+import { SiteChrome } from "@/components/site-chrome";
 import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
-import { getAgeGroups } from "@/lib/content";
-import { site } from "@/lib/data";
+import { getAgeGroups, getSettings } from "@/lib/content";
 
 const configuredSiteUrl = process.env.NEXT_PUBLIC_SITE_URL?.trim();
 const vercelUrl = process.env.VERCEL_URL?.trim();
@@ -14,22 +14,26 @@ const siteUrl = configuredSiteUrl
     : "https://mnk-tinasport.hr";
 const isPreviewDeployment = process.env.VERCEL_ENV === "preview";
 
-export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
-  title: { default: `${site.name} | Liga koja odgaja igrače`, template: `%s | ${site.name}` },
-  description: site.description,
-  robots: { index: !isPreviewDeployment, follow: !isPreviewDeployment },
-  applicationName: site.name,
-  alternates: { canonical: "/" },
-  openGraph: {
-    type: "website",
-    locale: "hr_HR",
-    siteName: site.name,
-    title: `${site.name} | Liga koja odgaja igrače`,
+export async function generateMetadata(): Promise<Metadata> {
+  const site = await getSettings();
+  const title = site.tagline ? `${site.name} | ${site.tagline}` : site.name;
+  return {
+    metadataBase: new URL(siteUrl),
+    title: { default: title, template: `%s | ${site.name}` },
     description: site.description,
-  },
-  twitter: { card: "summary", title: site.name, description: site.description },
-};
+    robots: { index: !isPreviewDeployment, follow: !isPreviewDeployment },
+    applicationName: site.name,
+    alternates: { canonical: "/" },
+    openGraph: {
+      type: "website",
+      locale: "hr_HR",
+      siteName: site.name,
+      title,
+      description: site.description,
+    },
+    twitter: { card: "summary", title: site.name, description: site.description },
+  };
+}
 
 export const viewport: Viewport = {
   themeColor: "#07162f",
@@ -40,7 +44,7 @@ export const viewport: Viewport = {
 };
 
 export default async function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  const ageGroups = await getAgeGroups();
+  const [ageGroups, site] = await Promise.all([getAgeGroups(), getSettings()]);
   return (
     <html lang="hr">
       <head>
@@ -48,10 +52,9 @@ export default async function RootLayout({ children }: Readonly<{ children: Reac
         <link rel="preload" href="/fonts/barlow-condensed-latin-ext-700.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
       </head>
       <body>
-        <a className="skip-link" href="#main-content">Preskoči na sadržaj</a>
-        <SiteHeader ageYears={ageGroups.map(({ year }) => year)} />
-        <main id="main-content">{children}</main>
-        <SiteFooter ageGroups={ageGroups} />
+        <SiteChrome header={<SiteHeader ageYears={ageGroups.map(({ year }) => year)} />} footer={<SiteFooter ageGroups={ageGroups} site={site} />}>
+          {children}
+        </SiteChrome>
       </body>
     </html>
   );

@@ -24,10 +24,28 @@ test("header remains visible at the top of the site", async ({ page }) => {
   await expect(page.getByRole("navigation", { name: "Glavna navigacija" }).or(page.getByRole("button", { name: "Otvori izbornik" }))).toBeVisible();
 });
 
-test("TinaCMS admin is built at /admin", async ({ page }) => {
-  await page.goto("/admin");
-  await expect(page).toHaveURL(/\/admin\/index\.html$/);
-  await expect(page).toHaveTitle("TinaCMS");
+test("CMS at /admin requires the password", async ({ page }) => {
+  await page.goto("/admin/utakmice");
+  await expect(page).toHaveURL(/\/admin\/prijava$/);
+  await expect(page.locator(".site-header")).toHaveCount(0);
+
+  await page.getByLabel("Lozinka").fill("pogresna");
+  await page.getByRole("button", { name: "Prijavi se" }).click();
+  await expect(page.getByText("Lozinka nije točna")).toBeVisible();
+
+  await page.getByLabel("Lozinka").fill("e2e-test-lozinka");
+  await page.getByRole("button", { name: "Prijavi se" }).click();
+  await expect(page).toHaveURL(/\/admin$/);
+  await expect(page.getByRole("link", { name: /Utakmice i rezultati/ })).toBeVisible();
+
+  await page.getByRole("button", { name: "Odjava" }).click();
+  await expect(page).toHaveURL(/\/admin\/prijava$/);
+});
+
+test("CMS responses are not cacheable or frameable", async ({ request }) => {
+  const response = await request.get("/admin/prijava");
+  expect(response.headers()["x-frame-options"]).toBe("DENY");
+  expect(response.headers()["cache-control"]).toContain("no-store");
 });
 
 test("homepage has no serious automatic accessibility violations", async ({ page }) => {

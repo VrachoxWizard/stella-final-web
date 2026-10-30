@@ -3,7 +3,14 @@ import { defineConfig } from "@playwright/test";
 export default defineConfig({
   testDir: "./tests/e2e",
   use: { baseURL: "http://localhost:3000", trace: "retain-on-failure" },
-  webServer: { command: "npm run build:local && npm run start", url: "http://localhost:3000", reuseExistingServer: true, timeout: 240_000 },
+  webServer: {
+    command: "npm run build && npm run start",
+    url: "http://localhost:3000",
+    reuseExistingServer: true,
+    timeout: 240_000,
+    // Test-only credentials; the admin tests below only log in and out, they never save.
+    env: { ADMIN_PASSWORD: "e2e-test-lozinka", SESSION_SECRET: "e2e-test-session-secret-0123456789", CMS_LOCAL: "1" },
+  },
   projects: [
     { name: "mobile-390", use: { viewport: { width: 390, height: 844 } } },
     { name: "tablet", use: { viewport: { width: 768, height: 1024 } } },

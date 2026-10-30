@@ -1,0 +1,274 @@
+{
+  "images": [
+    {
+      "id": "g1",
+      "src": "/images/WhatsApp-Image-2026-02-09-at-20.58.08.jpeg",
+      "alt": "Večernja utakmica mladih nogometaša na osvijetljenom terenu DSR Trnovčica",
+      "width": 1079,
+      "height": 894,
+      "homepage": true,
+      "featured": false
+    },
+    {
+      "id": "g6",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.13-1.jpeg",
+      "alt": "Pogled na bazene i smještaj sudionika Kupa grada Skradina",
+      "width": 1000,
+      "height": 667,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g7",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.13-2.jpeg",
+      "alt": "Večernji pogled na bazen i hotelski kompleks tijekom Kupa grada Skradina",
+      "width": 1000,
+      "height": 667,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g8",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.14.jpeg",
+      "alt": "Hotelska soba s plavim muralom za sudionike sportskog putovanja",
+      "width": 1600,
+      "height": 1066,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g9",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.14-1.jpeg",
+      "alt": "Smještaj pripremljen za mlade sudionike turnira",
+      "width": 1599,
+      "height": 1066,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g10",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.14-2.jpeg",
+      "alt": "Zajedničko kupanje i odmor tijekom turnirskog putovanja",
+      "width": 2048,
+      "height": 1152,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g11",
+      "src": "/images/WhatsApp-Image-2026-03-12-at-09.34.14-3.jpeg",
+      "alt": "Zajednički prostor hotela za sudionike Kupa grada Skradina",
+      "width": 1600,
+      "height": 1066,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g12",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.37.jpeg",
+      "alt": "Kup grada Skradina — bazen uz more s ležaljkama i borovima",
+      "width": 1620,
+      "height": 1080,
+      "homepage": true,
+      "featured": true
+    },
+    {
+      "id": "g13",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.37-1.jpeg",
+      "alt": "Kup grada Skradina — šljunčana plaža s ležaljkama u hladu borova",
+      "width": 2048,
+      "height": 1365,
+      "homepage": false,
+      "featured": true
+    },
+    {
+      "id": "g14",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.37-2.jpeg",
+      "alt": "Kup grada Skradina — svježe voće na doručku za sudionike",
+      "width": 2040,
+      "height": 1536,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g15",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.37-3.jpeg",
+      "alt": "Kup grada Skradina — vanjski lounge s pogledom na more",
+      "width": 1620,
+      "height": 1080,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g16",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.37-4.jpeg",
+      "alt": "Kup grada Skradina — poslastice poslužene sudionicima turnira",
+      "width": 2040,
+      "height": 1536,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g17",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38.jpeg",
+      "alt": "Kup grada Skradina — recepcija i lobby smještaja za sudionike",
+      "width": 2048,
+      "height": 1366,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g18",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38-1.jpeg",
+      "alt": "Kup grada Skradina — topli obrok na buffet stolu",
+      "width": 2040,
+      "height": 1536,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g19",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38-2.jpeg",
+      "alt": "Kup grada Skradina — sauna za odmor nakon utakmica",
+      "width": 2048,
+      "height": 1365,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g20",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38-3.jpeg",
+      "alt": "Kup grada Skradina — večernja terasa s pogledom na more",
+      "width": 720,
+      "height": 1080,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g21",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38-4.jpeg",
+      "alt": "Kup grada Skradina — doručak i ručak na self-service stolu",
+      "width": 2040,
+      "height": 1536,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g22",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.38-5.jpeg",
+      "alt": "Kup grada Skradina — hotel s bazenom i ležaljkama",
+      "width": 1024,
+      "height": 640,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g23",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39.jpeg",
+      "alt": "Kup grada Skradina — trofeji i medalje prije dodjele nagrada",
+      "width": 2040,
+      "height": 1536,
+      "homepage": true,
+      "featured": true
+    },
+    {
+      "id": "g24",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-1.jpeg",
+      "alt": "Kup grada Skradina — dvokrevetna soba za mlade sudionike",
+      "width": 2048,
+      "height": 1323,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g25",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-2.jpeg",
+      "alt": "Kup grada Skradina — pečeni krumpir i meso na buffet stolu",
+      "width": 2040,
+      "height": 1536,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g26",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-3.jpeg",
+      "alt": "Kup grada Skradina — balkon s cvijećem i pogledom na more",
+      "width": 720,
+      "height": 1080,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g27",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-4.jpeg",
+      "alt": "Kup grada Skradina — pogled s balkona na more i jedrilicu",
+      "width": 1334,
+      "height": 2000,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g28",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-5.jpeg",
+      "alt": "Kup grada Skradina — moderna hotelska soba za sudionike",
+      "width": 2048,
+      "height": 1251,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g29",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-6.jpeg",
+      "alt": "Kup grada Skradina — Hotel Punta, domaćin turnirskog vikenda",
+      "width": 2048,
+      "height": 1349,
+      "homepage": true,
+      "featured": true
+    },
+    {
+      "id": "g30",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.39-7.jpeg",
+      "alt": "Kup grada Skradina — restoran spreman za zajednički obrok",
+      "width": 2048,
+      "height": 1365,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g31",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.40.jpeg",
+      "alt": "Kup grada Skradina — doručak na toplom stolu za ekipe",
+      "width": 1600,
+      "height": 1200,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g32",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.40-1.jpeg",
+      "alt": "Kup grada Skradina — hotel i sunčana terasa uz more",
+      "width": 2000,
+      "height": 1334,
+      "homepage": true,
+      "featured": true
+    },
+    {
+      "id": "g33",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.40-2.jpeg",
+      "alt": "Kup grada Skradina — terasa s ležaljkama i pogledom na more",
+      "width": 2000,
+      "height": 1334,
+      "homepage": false,
+      "featured": false
+    },
+    {
+      "id": "g34",
+      "src": "/images/WhatsApp-Image-2026-08-18-at-12.11.40-3.jpeg",
+      "alt": "Kup grada Skradina — panoramski pogled na obalu i smještaj",
+      "width": 1024,
+      "height": 575,
+      "homepage": false,
+      "featured": true
+    }
+  ]
+}

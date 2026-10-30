@@ -1,0 +1,10 @@
+{
+  "hero": { "eyebrow": "Imate pitanje?", "title": "Kontakt", "text": "Za informacije o rasporedu, ekipama ili sudjelovanju javite nam se izravno.", "word": "Bok" },
+  "eyebrow": "Izravni kontakt",
+  "heading": "Tu smo za ekipe i roditelje.",
+  "text": "Najbrže ćemo odgovoriti e-mailom ili telefonom.",
+  "cardEyebrow": "Prijave i informacije",
+  "cardHeading": "Javite nam se izravno.",
+  "cardText": "Za prijavu ekipe, informacije o rasporedu ili druga pitanja pošaljite e-mail ili nas nazovite. Odgovorit ćemo u najkraćem mogućem roku.",
+  "cardNote": "Kontaktni obrazac bit će dostupan naknadno."
+}

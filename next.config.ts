@@ -21,6 +21,10 @@ const archiveSlugs = [
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["localhost", "127.0.0.1"],
   skipTrailingSlashRedirect: true,
+  experimental: {
+    // Photos are shrunk in the browser first; Vercel accepts at most ~4.5 MB per request.
+    serverActions: { bodySizeLimit: "4mb" },
+  },
   images: {
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
@@ -40,9 +44,18 @@ const nextConfig: NextConfig = {
       ...redirectBoth("/studio", "/admin"),
       { source: "/studio/:path*", destination: "/admin", permanent: true },
       ...archiveSlugs.flatMap((source) => redirectBoth(source, `https://arhiva.mnk-tinasport.hr${source}`)),
-      { source: "/admin", destination: "/admin/index.html", permanent: false },
-      { source: "/admin/", destination: "/admin/index.html", permanent: false },
     ];
+  },
+  async headers() {
+    return [{
+      source: "/admin/:path*",
+      headers: [
+        { key: "X-Frame-Options", value: "DENY" },
+        { key: "X-Content-Type-Options", value: "nosniff" },
+        { key: "Referrer-Policy", value: "same-origin" },
+        { key: "Cache-Control", value: "no-store" },
+      ],
+    }];
   },
   async rewrites() {
     return [

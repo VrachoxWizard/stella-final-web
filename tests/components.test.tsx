@@ -3,7 +3,6 @@ import { describe, expect, it, vi } from "vitest";
 import { GalleryGrid } from "@/components/gallery-grid";
 import { MatchCard } from "@/components/match-card";
 import { ScheduleView } from "@/components/schedule-view";
-import { announcements } from "@/lib/data";
 import type { Match } from "@/lib/types";
 
 vi.mock("next/image", () => ({ default: (props: React.ImgHTMLAttributes<HTMLImageElement>) => {
@@ -49,13 +48,6 @@ describe("matchday components", () => {
     fireEvent.keyDown(window, { key: "Escape" });
     expect(screen.queryByRole("dialog")).not.toBeInTheDocument();
     await waitFor(() => expect(opener).toHaveFocus());
-  });
-
-  it("maps the updated announcements without removed media", () => {
-    expect(announcements.find(({ id }) => id === "skradin-2026")).toMatchObject({ cta: { href: "/kontakt" } });
-    expect(announcements.find(({ id }) => id === "league-registration-2026")).toMatchObject({ date: "2026-09-26", cta: { href: "/kontakt" } });
-    expect(announcements.every(({ image }) => image === undefined)).toBe(true);
-    expect(announcements.find(({ id }) => id === "trnovcica-proljece")).toBeUndefined();
   });
 
   it("shows the designed empty state without empty filters", () => {

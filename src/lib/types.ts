@@ -83,33 +83,7 @@ export type ScorerTotal = {
   goals: number;
 };
 
-export type Announcement = {
-  id: string;
-  type: "news" | "tournament" | "notice";
-  title: string;
-  excerpt: string;
-  image?: string;
-  date: string;
-  cta?: { label: string; href: string };
-};
-
-export type GalleryImage = {
-  id: string;
-  src: string;
-  alt: string;
-  width: number;
-  height: number;
-};
-
-export type Sponsor = {
-  name: string;
-  image: string;
-  width: number;
-  height: number;
-  alt: string;
-  description: string;
-  url?: string;
-};
+export type { Announcement, GalleryImage, Settings } from "@/lib/schemas";
 
 export type CompetitionData = {
   seasons: Season[];

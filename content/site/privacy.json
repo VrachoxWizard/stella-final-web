@@ -1,0 +1,11 @@
+{
+  "hero": { "eyebrow": "Transparentno i jasno", "title": "Privatnost", "text": "Kako postupamo s podacima povezanima s ovom web-stranicom.", "word": "Fair" },
+  "updated": "28. kolovoza 2026.",
+  "intro": "Ova stranica opisuje osnovni način postupanja s osobnim podacima na web-stranici Tina Šport–Pia.",
+  "sections": [
+    { "title": "Kontakt", "text": "Web-stranica trenutačno nema kontaktni obrazac. Ako nam se javite e-mailom ili telefonom, podatke koje dobrovoljno pošaljete upotrebljavamo isključivo radi odgovora na vaš upit i organizacije aktivnosti." },
+    { "title": "Medijski sadržaj", "text": "Fotografije se objavljuju uz odgovarajuće dopuštenje organizatora i sudionika. Za pitanje ili zahtjev povezan s objavljenim sadržajem kontaktirajte nas." },
+    { "title": "Vaša prava", "text": "Možete zatražiti pristup, ispravak ili brisanje podataka koje ste nam poslali. Za zahtjev se javite na mnl.tinasport@gmail.com." },
+    { "title": "Voditelj obrade", "text": "Tina Šport–Pia, Remetinečka cesta 7/II, 10000 Zagreb. Kontakt: Nikola Zorotić, 092 2859 555." }
+  ]
+}

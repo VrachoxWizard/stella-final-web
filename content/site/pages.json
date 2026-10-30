@@ -1,0 +1,6 @@
+{
+  "schedule": { "eyebrow": "Natjecanje", "title": "Raspored", "text": "Teren, vrijeme i protivnik — sve što vam treba za sljedeći matchday.", "word": "Igra" },
+  "gallery": { "eyebrow": "Atmosfera lige", "title": "Galerija", "text": "Pogledi s tribina, zagrljaji nakon gola i zajedničke fotografije — sport kroz trenutke koji ostaju.", "word": "Tim" },
+  "ageGroup": { "eyebrow": "Natjecanje", "title": "Sve na jednom mjestu.", "text": "Raspored, rezultati, poredak i strijelci prikazuju se čim službeni podaci budu objavljeni." },
+  "emptySchedule": { "eyebrow": "Natjecanje · uskoro", "title": "Raspored još nije objavljen.", "text": "Termini i parovi pojavit će se ovdje čim budu službeno potvrđeni." }
+}

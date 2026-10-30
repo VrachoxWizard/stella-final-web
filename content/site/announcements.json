@@ -1,0 +1,34 @@
+{
+  "items": [
+    {
+      "id": "prijave-liga",
+      "visible": true,
+      "style": "light",
+      "title": "Prijave za Malonogometnu ligu",
+      "text": "Malonogometna liga počinje 26. rujna u ŠC Hotanj na Zagrebačkom velesajmu.\n\nLiga je namijenjena nogometašima rođenima od 2015. do 2020. godine, a očekuju ih redovito natjecanje, kvalitetne utakmice i sportsko druženje.",
+      "highlight": "Prijavite svoju ekipu i budite dio ovogodišnje Malonogometne lige!",
+      "contactText": "Za prijave i dodatne informacije javite se na",
+      "buttonLabel": "Prijave i informacije",
+      "buttonLink": "/kontakt",
+      "posterTop": "Prijave su otvorene",
+      "posterTitle": "Nova sezona\n26. 9. 2026.",
+      "posterBottom": "ŠC Hotanj · Zagrebački velesajam",
+      "posterNumber": "26"
+    },
+    {
+      "id": "kup-skradina",
+      "visible": true,
+      "style": "dark",
+      "title": "Kup grada Skradina",
+      "text": "Prijavite se na Kup grada Skradina, koji će se održati od 15. do 22. listopada u Skradinu.\n\nOčekuju vas uzbudljive utakmice, sportsko nadmetanje, dobro druženje i odlična atmosfera.",
+      "highlight": "",
+      "contactText": "Prijavite svoju ekipu na vrijeme na mail:",
+      "buttonLabel": "Prijave i informacije",
+      "buttonLink": "/kontakt",
+      "posterTop": "Kup grada",
+      "posterTitle": "Skradina",
+      "posterBottom": "15. – 22. listopada 2026.",
+      "posterNumber": ""
+    }
+  ]
+}
