@@ -21,6 +21,8 @@ const archiveSlugs = [
 const nextConfig: NextConfig = {
   allowedDevOrigins: ["localhost", "127.0.0.1"],
   skipTrailingSlashRedirect: true,
+  // The layout reads content/*.json at request time on dynamic routes (the CMS), so ship it with every function.
+  outputFileTracingIncludes: { "/**": ["./content/**/*.json"] },
   experimental: {
     // Photos are shrunk in the browser first; Vercel accepts at most ~4.5 MB per request.
     serverActions: { bodySizeLimit: "4mb" },
