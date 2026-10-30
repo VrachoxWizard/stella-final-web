@@ -56,8 +56,9 @@ export async function saveContent({ message, build, redirectTo }: {
     const store = getStore();
     for (let attempt = 0; ; attempt += 1) {
       const snapshot = await store.load();
-      const changes = await build(snapshot);
-      if (!changes.length) return { ok: true, message: "Nema promjena za spremanje." };
+      // Unchanged documents are skipped so a save without edits does not trigger a redeploy.
+      const changes = (await build(snapshot)).filter((change) => typeof change.content !== "string" || snapshot.files[change.path] !== change.content);
+      if (!changes.length) return { ok: true, message: "Nema promjena — sve je već spremljeno." };
       try {
         validateAll(applyChanges(snapshot.files, changes));
       } catch (error) {
