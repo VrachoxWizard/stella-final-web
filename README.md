@@ -93,6 +93,10 @@ Ako dodajete puno fotografija, dodajte ih u nekoliko manjih navrata (do ~10 odje
 
 CMS sprema promjene u ovaj GitHub repozitorij, a Vercel nakon svake promjene sam objavi novu verziju stranice. Za to su potrebne 3 stvari: **lozinka**, **tajni niz** i **GitHub token**.
 
+> **Stanje (30. 10. 2026.):** sve je već postavljeno na Vercel projektu `stella-web-final` (Production). `GITHUB_TOKEN` je trenutno token postojeće git prijave administratora, koji ima pristup svim njegovim repozitorijima. Sigurnije je zamijeniti ga ograničenim tokenom prema koraku 1. Upute ispod služe za promjenu ili ponovno postavljanje.
+>
+> Urednicima ne treba pristup GitHubu ni Vercelu — dovoljna im je lozinka.
+
 ### 1. GitHub token
 
 1. Na GitHubu: slika profila (gore desno) → **Settings** → **Developer settings** → **Personal access tokens** → **Fine-grained tokens** → **Generate new token**.
